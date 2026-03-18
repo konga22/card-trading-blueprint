@@ -20,6 +20,7 @@ type StoryCard = {
 export type LandingVariant = {
   key: LandingVariantKey;
   label: string;
+  switcherNote: string;
   eyebrow: string;
   title: string;
   description: string;
@@ -41,6 +42,7 @@ export const landingVariants: Record<LandingVariantKey, LandingVariant> = {
   professional: {
     key: "professional",
     label: "Professional",
+    switcherNote: "desk layout",
     eyebrow: "프로페셔널 방향",
     title: "가격과 신뢰를 정리한 카드 거래 플랫폼",
     description:
@@ -90,6 +92,7 @@ export const landingVariants: Record<LandingVariantKey, LandingVariant> = {
   creative: {
     key: "creative",
     label: "Creative",
+    switcherNote: "collector board",
     eyebrow: "크리에이티브 방향",
     title: "수집의 재미를 살린 카드 거래 플랫폼",
     description:
@@ -139,6 +142,7 @@ export const landingVariants: Record<LandingVariantKey, LandingVariant> = {
   minimalist: {
     key: "minimalist",
     label: "Minimalist",
+    switcherNote: "quiet pricing",
     eyebrow: "미니멀 방향",
     title: "핵심만 남긴 카드 거래 플랫폼",
     description:

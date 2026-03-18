@@ -794,16 +794,26 @@
 }
 
 .variantButtons {
-  display: inline-flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
+  width: min(780px, 100%);
+  padding: 10px;
+  border-radius: 28px;
+  background: rgba(245, 245, 248, 0.9);
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .variantButton {
-  min-height: 44px;
-  padding: 0 16px;
+  display: grid;
+  gap: 4px;
+  justify-items: start;
+  min-height: 64px;
+  padding: 12px 16px;
   border: 0;
-  border-radius: 999px;
+  border-radius: 20px;
   background: var(--landing-button-surface);
   color: rgba(20, 18, 24, 0.82);
   box-shadow: var(--landing-soft-shadow);
@@ -823,6 +833,24 @@
   background: var(--landing-accent);
   color: #ffffff;
   transform: translateY(-1px);
+}
+
+.variantButtonText {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.variantButtonNote {
+  color: rgba(20, 18, 24, 0.54);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: lowercase;
+}
+
+.variantButtonActive .variantButtonNote {
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .landingHero {
@@ -1239,5 +1267,809 @@
 
   .dashboardMetrics {
     grid-template-columns: 1fr;
+  }
+}
+
+.sceneStack {
+  display: grid;
+  gap: 22px;
+}
+
+.sceneHero {
+  display: grid;
+  gap: 18px;
+  padding: 8px 6px 0;
+}
+
+.sceneCopy {
+  display: grid;
+  gap: 14px;
+  max-width: none;
+}
+
+.sceneEyebrow,
+.boardLabel,
+.storyLeadLabel {
+  margin: 0;
+  color: var(--landing-accent-strong);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sceneHeadline {
+  margin: 0;
+  font-size: clamp(22px, 4.2vw, 56px);
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+  font-weight: 800;
+  color: #121016;
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
+.sceneDescription,
+.storyLeadBody,
+.storyCardBody,
+.creativeNoteBody,
+.minimalistBoardBody {
+  margin: 0;
+  max-width: 780px;
+  color: rgba(18, 16, 22, 0.8);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.sceneSearch {
+  display: grid;
+  gap: 10px;
+}
+
+.sceneSearchCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: var(--landing-card-shadow);
+}
+
+.sceneSearchCopy {
+  display: grid;
+  gap: 4px;
+}
+
+.sceneSearchLabel {
+  color: rgba(18, 16, 22, 0.48);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sceneSearchPrompt {
+  color: #121016;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.sceneSearchChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sceneSearchChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.08);
+  color: #5b35c9;
+  box-shadow: var(--landing-card-shadow);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sceneCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.boardTitle,
+.storyLeadTitle {
+  margin: 0;
+  font-size: clamp(18px, 2.4vw, 30px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  color: #141118;
+}
+
+.boardBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(183, 154, 247, 0.1);
+  color: var(--landing-accent-strong);
+  box-shadow: var(--landing-card-shadow);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.metricCardLabel {
+  display: block;
+  color: rgba(18, 16, 22, 0.55);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.metricCardValue {
+  display: block;
+  margin-top: 10px;
+  color: #121016;
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.storyCardStat {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  width: fit-content;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(183, 154, 247, 0.12);
+  color: var(--landing-accent-strong);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.storyCardTitle {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #141118;
+}
+
+.professionalMetaStrip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.professionalMetaCell,
+.professionalBoard,
+.storyLeadCard,
+.professionalStoryCard,
+.creativeMainPanel,
+.creativeNoteCard,
+.creativeEditorialLead,
+.creativeStoryCard,
+.minimalistBoard,
+.minimalistLead,
+.minimalistStoryRow,
+.minimalistPoint {
+  background: #ffffff;
+  box-shadow: var(--landing-soft-shadow);
+}
+
+.professionalMetaCell {
+  display: grid;
+  gap: 8px;
+  padding: 20px 22px;
+  border-radius: 26px;
+}
+
+.professionalMetaLabel {
+  color: rgba(18, 16, 22, 0.48);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.professionalMetaValue {
+  color: #121016;
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.professionalBoard {
+  display: grid;
+  gap: 18px;
+  padding: 26px;
+  border-radius: 34px;
+}
+
+.professionalBoardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.professionalMetricRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.professionalMetricCard {
+  padding: 18px 20px;
+  border-radius: 24px;
+  background: rgba(249, 248, 252, 0.98);
+  box-shadow: var(--landing-card-shadow);
+}
+
+.professionalBoardGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 14px;
+}
+
+.professionalLedger,
+.professionalChartPanel {
+  padding: 18px;
+  border-radius: 28px;
+  background: rgba(250, 249, 252, 0.98);
+  box-shadow: var(--landing-card-shadow);
+}
+
+.professionalLedger {
+  display: grid;
+  gap: 10px;
+}
+
+.professionalLedgerRow {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 12px 4px;
+}
+
+.professionalLedgerIndex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: rgba(183, 154, 247, 0.12);
+  color: var(--landing-accent-strong);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.professionalLedgerCopy {
+  display: grid;
+  gap: 4px;
+}
+
+.professionalLedgerTitle {
+  color: #121016;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.professionalLedgerMeta,
+.professionalChartLabel,
+.professionalChartFooter span,
+.minimalistActivityCopy span {
+  color: rgba(18, 16, 22, 0.66);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.professionalChartPanel {
+  display: grid;
+  gap: 16px;
+}
+
+.professionalChartHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.professionalChartValue,
+.creativePriceValue,
+.minimalistBoardValue {
+  color: #121016;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+.professionalChartFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.professionalStorySection {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.45fr);
+  gap: 16px;
+}
+
+.storyLeadCard {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 28px;
+}
+
+.professionalStoryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.professionalStoryCard {
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  border-radius: 26px;
+}
+
+.creativeRibbonRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.creativeRibbon {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(183, 154, 247, 0.1);
+  color: #5a43b2;
+  box-shadow: var(--landing-card-shadow);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.creativeBoard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 16px;
+}
+
+.creativeMainPanel {
+  display: grid;
+  gap: 18px;
+  padding: 28px;
+  border-radius: 38px 28px 34px 30px;
+  transform: rotate(-1deg);
+}
+
+.creativeMainHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.creativeStamp {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 233, 244, 0.9);
+  color: #8c4c75;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.creativePriceBlock {
+  display: grid;
+  gap: 6px;
+}
+
+.creativePriceLabel {
+  color: rgba(18, 16, 22, 0.54);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.creativeMetricCloud {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.creativeMetricChip {
+  display: grid;
+  gap: 6px;
+  min-width: 148px;
+  padding: 14px 16px;
+  border-radius: 22px;
+  background: rgba(248, 245, 252, 1);
+  box-shadow: var(--landing-card-shadow);
+}
+
+.creativeMetricChip span {
+  color: rgba(18, 16, 22, 0.52);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.creativeMetricChip strong {
+  color: #141118;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.creativeStack {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.creativeNoteCard {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 30px 24px 28px 22px;
+}
+
+.creativeNoteCard:nth-child(2) {
+  margin-left: 24px;
+}
+
+.creativeNoteCard:nth-child(3) {
+  margin-left: 8px;
+}
+
+.creativeNoteTone {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  width: fit-content;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(183, 154, 247, 0.1);
+  color: var(--landing-accent-strong);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.creativeNoteTitle {
+  margin: 0;
+  color: #141118;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.creativeEditorial {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.88fr) minmax(0, 1.12fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.creativeEditorialLead {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 28px;
+}
+
+.creativeStoryLane {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.creativeStoryCard {
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  border-radius: 32px 24px 28px 22px;
+}
+
+.creativeStoryCard:nth-child(2) {
+  transform: translateY(24px);
+}
+
+.creativePointRow {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.creativePoint {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: var(--landing-card-shadow);
+  color: #141118;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.minimalistHero {
+  padding-bottom: 8px;
+}
+
+.minimalistBoard {
+  display: grid;
+  gap: 18px;
+  padding: 24px 26px;
+  border-radius: 30px;
+}
+
+.minimalistBoardHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.minimalistMetricRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
+.minimalistMetricCell {
+  display: grid;
+  gap: 8px;
+  padding: 18px 0;
+}
+
+.minimalistMetricCell + .minimalistMetricCell {
+  padding-left: 18px;
+}
+
+.minimalistActivityList {
+  display: grid;
+  gap: 12px;
+}
+
+.minimalistActivityRow {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  padding: 14px 0;
+}
+
+.minimalistActivityIndex {
+  color: rgba(18, 16, 22, 0.42);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.minimalistActivityCopy {
+  display: grid;
+  gap: 4px;
+}
+
+.minimalistActivityCopy strong,
+.minimalistStoryCopy h4 {
+  color: #121016;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.minimalistNarrative {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+  gap: 18px;
+}
+
+.minimalistLead {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 28px;
+}
+
+.minimalistStoryList,
+.minimalistPointList {
+  display: grid;
+  gap: 12px;
+}
+
+.minimalistStoryRow {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 18px 20px;
+  border-radius: 22px;
+}
+
+.minimalistStoryCopy {
+  display: grid;
+  gap: 8px;
+}
+
+.minimalistPoint {
+  display: flex;
+  align-items: center;
+  min-height: 58px;
+  padding: 0 20px;
+  border-radius: 20px;
+  color: #141118;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.proofStrip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0 6px;
+}
+
+.proofItem {
+  display: grid;
+  gap: 8px;
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: var(--landing-card-shadow);
+}
+
+.proofLabel {
+  color: rgba(18, 16, 22, 0.52);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.proofValue {
+  color: #16a34a;
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.themeProfessional .professionalMetaCell,
+.themeProfessional .professionalBoard,
+.themeProfessional .storyLeadCard,
+.themeProfessional .professionalStoryCard {
+  border-radius: 24px;
+}
+
+.themeCreative .creativeMainPanel,
+.themeCreative .creativeNoteCard,
+.themeCreative .creativeEditorialLead,
+.themeCreative .creativeStoryCard {
+  box-shadow:
+    0 18px 32px rgba(127, 99, 230, 0.12),
+    0 4px 12px rgba(127, 99, 230, 0.05);
+}
+
+.themeMinimalist .sceneDescription,
+.themeMinimalist .storyLeadBody,
+.themeMinimalist .storyCardBody,
+.themeMinimalist .minimalistBoardBody {
+  color: rgba(18, 16, 22, 0.72);
+}
+
+.themeMinimalist .minimalistBoard,
+.themeMinimalist .minimalistLead,
+.themeMinimalist .minimalistStoryRow,
+.themeMinimalist .minimalistPoint {
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.05),
+    0 1px 3px rgba(15, 23, 42, 0.025);
+}
+
+@media (max-width: 1080px) {
+  .professionalMetaStrip,
+  .professionalMetricRow,
+  .professionalStoryGrid,
+  .creativeStoryLane,
+  .minimalistMetricRow,
+  .proofStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .professionalBoardGrid,
+  .professionalStorySection,
+  .creativeBoard,
+  .creativeEditorial,
+  .minimalistNarrative {
+    grid-template-columns: 1fr;
+  }
+
+  .creativeNoteCard:nth-child(2),
+  .creativeNoteCard:nth-child(3),
+  .creativeStoryCard:nth-child(2) {
+    margin-left: 0;
+    transform: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .variantButtons {
+    grid-template-columns: 1fr;
+  }
+
+  .sceneHeadline,
+  .boardTitle,
+  .storyLeadTitle {
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  .professionalBoard,
+  .storyLeadCard,
+  .professionalStoryCard,
+  .creativeMainPanel,
+  .creativeNoteCard,
+  .creativeEditorialLead,
+  .creativeStoryCard,
+  .minimalistBoard,
+  .minimalistLead,
+  .minimalistStoryRow,
+  .minimalistPoint {
+    padding: 18px;
+  }
+
+  .professionalChartHeader,
+  .professionalBoardHeader,
+  .minimalistBoardHead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .creativeMetricChip {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .sceneSearchCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .creativePointRow {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .minimalistMetricCell + .minimalistMetricCell {
+    padding-left: 0;
   }
 }
