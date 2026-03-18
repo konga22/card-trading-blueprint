@@ -9,6 +9,7 @@ export * from "./HomePage";
 export * from "./HomeSearchBar";
 export * from "./MarketPage";
 export * from "./MarketSnapshot";
+export * from "./MarketplaceLandingPage";
 export * from "./PageScaffold";
 export * from "./QuickActionsGrid";
 export * from "./SearchHubPage";

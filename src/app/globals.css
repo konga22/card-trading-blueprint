@@ -3,6 +3,7 @@
 :root {
   color-scheme: light;
   font-family:
+    var(--font-body),
     -apple-system,
     BlinkMacSystemFont,
     "SF Pro Display",
@@ -12,7 +13,7 @@
     "Noto Sans KR",
     "Segoe UI",
     sans-serif;
-  background: #ffffff;
+  background: var(--bg);
   color: var(--text-primary);
 }
 
@@ -27,7 +28,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: #ffffff;
+  background: var(--bg);
   color: var(--text-primary);
   font-family: inherit;
   text-rendering: optimizeLegibility;
@@ -57,7 +58,7 @@ button {
 }
 
 ::selection {
-  background: rgba(49, 130, 246, 0.14);
+  background: rgba(124, 58, 237, 0.18);
 }
 
 .app-shell {
@@ -65,43 +66,47 @@ button {
 }
 
 .app-shell__inner {
-  width: min(1240px, calc(100% - 24px));
+  width: min(1280px, calc(100% - 24px));
   margin: 0 auto;
-  padding: 16px 0 40px;
+  padding: 20px 0 40px;
 }
 
 .top-navigation {
-  position: sticky;
-  top: 16px;
+  position: static;
   z-index: 30;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
-  padding: 12px 16px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  background: #ffffff;
-  box-shadow: var(--shadow-card);
+  padding: 2px 4px 18px;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  box-shadow: none;
+}
+
+.top-navigation__brand-block {
+  min-width: 0;
 }
 
 .top-navigation__brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   min-width: 0;
 }
 
 .top-navigation__brand-mark {
   display: inline-grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 14px;
-  background: var(--text-primary);
-  color: #ffffff;
-  font-size: 14px;
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: var(--brand);
+  color: #fffdf8;
+  font-size: 13px;
   font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .top-navigation__brand-copy {
@@ -111,42 +116,45 @@ button {
 }
 
 .top-navigation__brand-name {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
+  word-break: keep-all;
 }
 
 .top-navigation__tagline {
-  margin-top: 2px;
+  margin-top: 4px;
   color: var(--text-tertiary);
   font-size: 12px;
   line-height: 1.4;
+  word-break: keep-all;
 }
 
 .top-navigation__links {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
+  justify-self: center;
+  gap: 18px;
 }
 
-.top-navigation__link {
+.top-navigation__nav-link {
   display: inline-flex;
   align-items: center;
-  min-height: 36px;
-  padding: 0 12px;
-  border-radius: 10px;
+  min-height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--text-secondary);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   transition:
-    background-color 160ms ease,
     color 160ms ease;
 }
 
-.top-navigation__link:hover {
-  background: var(--surface-subtle);
-  color: var(--text-primary);
+.top-navigation__nav-link:hover {
+  color: var(--brand-strong);
 }
 
 .top-navigation__actions {
@@ -154,7 +162,21 @@ button {
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 10px;
+}
+
+.top-navigation__utility-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 160ms ease;
+}
+
+.top-navigation__utility-link:hover {
+  color: var(--brand-strong);
 }
 
 .shared-button {
@@ -162,9 +184,9 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-height: 44px;
+  min-height: 46px;
   padding: 0 16px;
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid transparent;
   font-size: 14px;
   font-weight: 600;
@@ -185,7 +207,7 @@ button {
 
 .shared-button--primary {
   background: var(--brand);
-  color: #ffffff;
+  color: #fffdf8;
   box-shadow: none;
 }
 
@@ -195,12 +217,13 @@ button {
 
 .shared-button--secondary {
   border-color: var(--border);
-  background: #ffffff;
+  background: var(--surface);
   color: var(--text-primary);
 }
 
 .shared-button--secondary:hover {
-  background: var(--surface-subtle);
+  border-color: rgba(111, 77, 230, 0.22);
+  background: #faf7ff;
 }
 
 .status-badge {
@@ -232,7 +255,7 @@ button {
 }
 
 .status-badge--brand {
-  background: rgba(49, 130, 246, 0.1);
+  background: rgba(124, 58, 237, 0.12);
   color: var(--brand-strong);
 }
 
@@ -242,9 +265,9 @@ button {
   justify-content: center;
   min-height: 36px;
   padding: 0 14px;
-  border-radius: 10px;
+  border-radius: 14px;
   border: 1px solid var(--border);
-  background: #ffffff;
+  background: var(--surface);
   color: var(--text-secondary);
   cursor: pointer;
   transition:
@@ -259,8 +282,8 @@ button {
 }
 
 .filter-chip--active {
-  border-color: rgba(49, 130, 246, 0.25);
-  background: rgba(49, 130, 246, 0.08);
+  border-color: rgba(124, 58, 237, 0.24);
+  background: rgba(124, 58, 237, 0.1);
   color: var(--brand-strong);
 }
 
@@ -272,8 +295,8 @@ button {
 
 .card-panel {
   border: 1px solid var(--border);
-  border-radius: 20px;
-  background: #ffffff;
+  border-radius: 24px;
+  background: var(--surface);
   box-shadow: var(--shadow-card);
 }
 
@@ -284,8 +307,8 @@ button {
 }
 
 .card-panel--interactive:hover {
-  border-color: rgba(49, 130, 246, 0.2);
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08), 0 10px 20px rgba(15, 23, 42, 0.05);
+  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: 0 1px 2px rgba(68, 44, 122, 0.08), 0 10px 20px rgba(68, 44, 122, 0.06);
 }
 
 .section-header {
@@ -335,30 +358,31 @@ button {
 }
 
 .marketing-main {
-  padding-top: 20px;
+  padding-top: 16px;
 }
 
 .marketing-nav-icons {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .marketing-icon-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  background: #ffffff;
+  border-radius: 16px;
+  background: var(--surface);
   color: var(--text-secondary);
 }
 
 .marketing-icon-link:hover {
-  background: var(--surface-subtle);
-  color: var(--text-primary);
+  background: #faf7ff;
+  border-color: rgba(111, 77, 230, 0.22);
+  color: var(--brand-strong);
 }
 
 .marketing-footer {
@@ -383,13 +407,12 @@ button {
 @media (max-width: 860px) {
   .app-shell__inner {
     width: min(100%, calc(100% - 16px));
-    padding-top: 8px;
+    padding-top: 12px;
   }
 
   .top-navigation {
-    position: static;
+    grid-template-columns: 1fr;
     align-items: flex-start;
-    flex-direction: column;
   }
 
   .top-navigation__links,

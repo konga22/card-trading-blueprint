@@ -1,0 +1,400 @@
+.page {
+  display: grid;
+  gap: 20px;
+  padding-bottom: 8px;
+}
+
+.hero,
+.mainGrid {
+  display: grid;
+  gap: 18px;
+}
+
+.hero {
+  grid-template-columns: minmax(0, 0.92fr) minmax(340px, 1.08fr);
+}
+
+.mainGrid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+}
+
+.heroLead,
+.marketCard,
+.sectionPanel,
+.sidePanel {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+
+.heroLead,
+.marketCard {
+  padding: 28px;
+}
+
+.sectionPanel,
+.sidePanel {
+  padding: 22px;
+}
+
+.heroLead,
+.marketCard,
+.sectionPanel,
+.sidePanel,
+.sideStack {
+  display: grid;
+  gap: 16px;
+}
+
+.sideStack {
+  align-content: start;
+}
+
+.kicker,
+.sectionLabel,
+.statLabel,
+.cardMeta {
+  margin: 0;
+  color: var(--brand-strong);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heroTitle,
+.panelTitle,
+.cardTitle,
+.statValue,
+.feedPrice {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-heading), "Pretendard Variable", "Noto Sans KR", sans-serif;
+  word-break: keep-all;
+}
+
+.heroTitle,
+.panelTitle,
+.cardTitle {
+  text-wrap: balance;
+}
+
+.heroTitle {
+  max-width: 11ch;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  font-weight: 800;
+}
+
+.panelTitle {
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.cardTitle {
+  font-size: 20px;
+  line-height: 1.24;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.heroDescription,
+.cardDescription,
+.feedCopy p,
+.feedCopy span,
+.utilityCopy span,
+.noteRow {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.heroDescription {
+  max-width: 42ch;
+}
+
+.searchBar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.searchField {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 0 18px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-subtle);
+  color: var(--brand-strong);
+}
+
+.searchInput {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 16px;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: var(--text-tertiary);
+}
+
+.primaryCta,
+.secondaryCta {
+  min-height: 56px;
+  border-radius: 14px;
+  padding-inline: 18px;
+}
+
+.primaryCta {
+  gap: 8px;
+}
+
+.quickRow,
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.quickChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 700;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+.quickChip:hover {
+  border-color: rgba(111, 77, 230, 0.28);
+  color: var(--brand-strong);
+  background: #faf7ff;
+}
+
+.statRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.statCard {
+  display: grid;
+  gap: 8px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-subtle);
+}
+
+.statValue {
+  font-size: 30px;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+}
+
+.panelHead,
+.panelHeadCompact {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.panelHeadCompact {
+  align-items: start;
+}
+
+.inlineAction,
+.cardAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--brand-strong);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.feedList,
+.categoryGrid,
+.utilityList,
+.noteList {
+  display: grid;
+  gap: 12px;
+}
+
+.feedRow,
+.categoryCard,
+.utilityRow {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease,
+    background-color 160ms ease;
+}
+
+.feedRow,
+.utilityRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 16px;
+}
+
+.categoryGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.categoryCard {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+.feedRow:hover,
+.categoryCard:hover,
+.utilityRow:hover {
+  border-color: rgba(111, 77, 230, 0.28);
+  background: #faf7ff;
+  transform: translateY(-1px);
+}
+
+.feedRowAccent {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f5ff 100%);
+}
+
+.feedCopy,
+.cardCopy,
+.utilityCopy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.feedCopy strong,
+.utilityCopy strong {
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.feedPrice {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.cardIcon,
+.utilityIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(155, 135, 245, 0.12);
+  color: var(--brand-strong);
+}
+
+.cardDescription {
+  max-width: 30ch;
+}
+
+.noteRow {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.noteBullet {
+  width: 6px;
+  height: 6px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: var(--brand);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 1120px) {
+  .hero,
+  .mainGrid,
+  .statRow,
+  .categoryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroTitle {
+    max-width: 12ch;
+  }
+}
+
+@media (max-width: 760px) {
+  .heroLead,
+  .marketCard,
+  .sectionPanel,
+  .sidePanel {
+    padding: 18px;
+  }
+
+  .searchBar,
+  .feedRow,
+  .utilityRow {
+    grid-template-columns: 1fr;
+  }
+
+  .panelHead,
+  .panelHeadCompact {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heroTitle {
+    max-width: none;
+    font-size: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quickChip,
+  .feedRow,
+  .categoryCard,
+  .utilityRow {
+    transition: none;
+  }
+}

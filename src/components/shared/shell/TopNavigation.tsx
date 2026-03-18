@@ -3,7 +3,6 @@ import type { HTMLAttributes, ReactNode } from "react";
 
 import { cn } from "../cn";
 import { PrimaryButton } from "../button/PrimaryButton";
-import { SecondaryButton } from "../button/SecondaryButton";
 
 type NavLink = {
   label: string;
@@ -40,7 +39,7 @@ export function TopNavigation({
       <div className="top-navigation__brand-block">
         <Link className="top-navigation__brand" href="/" aria-label="Home">
           <span className="top-navigation__brand-mark" aria-hidden="true">
-            C
+            CT
           </span>
           <span className="top-navigation__brand-copy">
             <span className="top-navigation__brand-name">{brand}</span>
@@ -52,7 +51,7 @@ export function TopNavigation({
       {links.length ? (
         <nav className="top-navigation__links" aria-label="Primary">
           {links.map((link) => (
-            <Link key={link.href} className="top-navigation__link" href={link.href}>
+            <Link key={link.href} className="top-navigation__nav-link" href={link.href}>
               {link.label}
             </Link>
           ))}
@@ -62,9 +61,9 @@ export function TopNavigation({
       <div className="top-navigation__actions">
         {rightSlot}
         {secondaryAction ? (
-          <SecondaryButton href={secondaryAction.href} className="top-navigation__action">
+          <Link href={secondaryAction.href} className="top-navigation__utility-link">
             {secondaryAction.label}
-          </SecondaryButton>
+          </Link>
         ) : null}
         {primaryAction ? (
           <PrimaryButton href={primaryAction.href} className="top-navigation__action">

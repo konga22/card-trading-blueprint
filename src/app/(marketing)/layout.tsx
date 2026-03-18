@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Bell, Search, UserRound } from "lucide-react";
+import { Search } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { AppShell, TopNavigation } from "@/components/shared";
@@ -15,27 +15,19 @@ export default function MarketingLayout({
     <AppShell>
       <TopNavigation
         brand="Card Trading Blueprint"
-        tagline="플랫한 카드 거래 홈"
+        tagline="중고 카드 거래"
         links={[
           { label: "홈", href: "/" },
-          { label: "탐색", href: "/discover" },
-          { label: "입문", href: "/beginner" },
+          { label: "둘러보기", href: "/discover" },
           { label: "시세", href: "/market" },
+          { label: "안전거래", href: "/safety" },
         ]}
         secondaryAction={{ label: "로그인", href: "/account/login" }}
-        primaryAction={{ label: "판매 시작", href: "/sell/start" }}
+        primaryAction={{ label: "판매 등록", href: "/sell/start" }}
         rightSlot={
-          <div className="marketing-nav-icons">
-            <Link className="marketing-icon-link" href="/search" aria-label="검색">
-              <Search size={18} />
-            </Link>
-            <Link className="marketing-icon-link" href="/notifications" aria-label="알림">
-              <Bell size={18} />
-            </Link>
-            <Link className="marketing-icon-link" href="/account/login" aria-label="계정">
-              <UserRound size={18} />
-            </Link>
-          </div>
+          <Link className="marketing-icon-link" href="/search" aria-label="검색">
+            <Search size={18} />
+          </Link>
         }
       />
 
@@ -49,7 +41,7 @@ export default function MarketingLayout({
           <Link href="/privacy">개인정보처리방침</Link>
         </div>
         <p className="marketing-footer-note">
-          홈은 탐색 허브 역할만 맡고, 실제 행동은 각각의 전용 페이지에서 이어집니다.
+          카드 중고거래를 빠르게 판단하도록 돕는 홈입니다.
         </p>
       </footer>
     </AppShell>

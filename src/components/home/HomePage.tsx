@@ -31,6 +31,37 @@ const proofItems = [
   { label: "찜 등록 카드", value: "2.7k" },
 ];
 
+const categoryItems = [
+  { label: "Pokemon", meta: "인기 매물 1,204건", href: "/discover?category=pokemon" },
+  { label: "Yu-Gi-Oh!", meta: "오늘 거래 328건", href: "/discover?category=yugioh" },
+  { label: "One Piece", meta: "급상승 조회 4.1배", href: "/discover?category=onepiece" },
+  { label: "Sports", meta: "검수 가능 비율 73%", href: "/discover?category=sports" },
+];
+
+const featuredListings = [
+  {
+    series: "Pokemon",
+    title: "피카츄 VMAX CSR",
+    meta: "검수 가능 · 응답 평균 6분",
+    price: "318,000원",
+    note: "최근 체결 대비 +2.1%",
+  },
+  {
+    series: "Yu-Gi-Oh!",
+    title: "푸른눈의 백룡 1st",
+    meta: "안전결제 사용 · 신뢰 판매자 4.9",
+    price: "452,000원",
+    note: "찜 등록 184회",
+  },
+  {
+    series: "One Piece",
+    title: "루피 리더 패러렐",
+    meta: "오늘 조회 급상승 · 검수 가능",
+    price: "229,000원",
+    note: "최근 거래 27건",
+  },
+];
+
 const themeClassName: Record<LandingVariantKey, string> = {
   professional: styles.themeProfessional,
   creative: styles.themeCreative,
@@ -361,6 +392,40 @@ function ProofStrip() {
   );
 }
 
+function MarketplacePreview() {
+  return (
+    <section className={styles.marketplacePreview}>
+      <div className={styles.marketplaceCategoryGrid}>
+        {categoryItems.map((item) => (
+          <Link key={item.label} className={styles.marketplaceCategoryCard} href={item.href}>
+            <span className={styles.marketplaceCategoryLabel}>{item.label}</span>
+            <span className={styles.marketplaceCategoryMeta}>{item.meta}</span>
+          </Link>
+        ))}
+      </div>
+
+      <div className={styles.marketplaceFeatureHeader}>
+        <p className={styles.storyLeadLabel}>Featured Listings</p>
+        <h3 className={styles.storyLeadTitle}>지금 비교할 수 있는 대표 매물</h3>
+      </div>
+
+      <div className={styles.marketplaceFeatureGrid}>
+        {featuredListings.map((item) => (
+          <article key={item.title} className={styles.marketplaceFeatureCard}>
+            <span className={styles.marketplaceFeatureSeries}>{item.series}</span>
+            <h4 className={styles.marketplaceFeatureTitle}>{item.title}</h4>
+            <p className={styles.marketplaceFeatureMeta}>{item.meta}</p>
+            <div className={styles.marketplaceFeatureFooter}>
+              <strong className={styles.marketplaceFeaturePrice}>{item.price}</strong>
+              <span className={styles.marketplaceFeatureNote}>{item.note}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function HomePage() {
   const [activeVariant, setActiveVariant] =
     useState<LandingVariantKey>("professional");
@@ -409,6 +474,7 @@ export function HomePage() {
 
         <VariantScene variant={variant} />
         <ProofStrip />
+        <MarketplacePreview />
       </main>
     </div>
   );
