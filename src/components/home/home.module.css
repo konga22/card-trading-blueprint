@@ -5,7 +5,7 @@
 .main,
 .routePage {
   display: grid;
-  gap: 32px;
+  gap: 48px;
 }
 
 .routeBody,
@@ -27,8 +27,8 @@
 .routePanel,
 .directoryCard {
   border: 0;
-  border-radius: 18px;
-  background: #ffffff;
+  border-radius: 0;
+  background: transparent;
   box-shadow: none;
 }
 
@@ -39,7 +39,7 @@
 .deepPanel,
 .routePanel,
 .directoryCard {
-  padding: 22px;
+  padding: 0;
 }
 
 .searchLead,
@@ -83,10 +83,10 @@
 
 .searchPanel {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.3fr) minmax(260px, 0.9fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr) minmax(220px, 0.8fr);
   align-items: start;
-  gap: 18px;
-  padding: 20px;
+  gap: 20px;
+  padding: 0;
 }
 
 .searchForm {
@@ -97,7 +97,7 @@
 }
 
 .searchLead {
-  gap: 12px;
+  gap: 10px;
 }
 
 .searchLeadHeader {
@@ -109,8 +109,8 @@
 
 .searchTitle {
   margin: 0;
-  font-size: clamp(28px, 3vw, 38px);
-  line-height: 1.08;
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.1;
   letter-spacing: -0.03em;
   font-weight: 800;
 }
@@ -127,10 +127,10 @@
 }
 
 .searchMetaBlock {
-  padding: 14px 16px;
+  padding: 0;
   border: 0;
-  border-radius: 16px;
-  background: #f6f6f6;
+  border-radius: 0;
+  background: transparent;
 }
 
 .searchInputWrap {
@@ -140,7 +140,7 @@
   min-height: 60px;
   padding: 0 16px;
   border: 0;
-  border-radius: 16px;
+  border-radius: 14px;
   background: #f5f5f5;
 }
 
@@ -235,8 +235,8 @@
 .heroPanel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(420px, 0.92fr);
-  gap: 24px;
-  padding: 24px;
+  gap: 32px;
+  padding: 0;
 }
 
 .heroBadge {
@@ -253,7 +253,7 @@
 }
 
 .heroMain {
-  gap: 18px;
+  gap: 20px;
 }
 
 .heroTitle,
@@ -291,15 +291,16 @@
 }
 
 .heroProofGrid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
 .heroProofCard {
-  padding: 16px 16px 18px;
+  padding: 16px 0;
   border: 0;
-  border-radius: 18px;
-  background: #f7f7f7;
+  border-radius: 0;
+  background: transparent;
+  border-bottom: 1px solid #efefef;
 }
 
 .heroProofValue {
@@ -312,18 +313,18 @@
 .heroSpotlight {
   display: grid;
   grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1fr);
-  gap: 18px;
-  padding: 18px;
+  gap: 20px;
+  padding: 0;
   border: 0;
-  border-radius: 20px;
-  background: #ffffff;
+  border-radius: 0;
+  background: transparent;
 }
 
 .heroSpotlightMedia {
   display: grid;
   place-items: center;
-  min-height: 420px;
-  border-radius: 18px;
+  min-height: 500px;
+  border-radius: 20px;
   background:
     linear-gradient(180deg, #fafafa 0%, #f0f0f0 100%);
 }
@@ -336,6 +337,7 @@
 
 .heroSpotlightBody {
   gap: 16px;
+  align-content: start;
 }
 
 .heroSpotlightTop {
@@ -365,7 +367,7 @@
     "Space Grotesk",
     var(--font-ui),
     sans-serif;
-  font-size: clamp(28px, 3vw, 40px);
+  font-size: clamp(30px, 3vw, 44px);
   line-height: 1;
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -373,19 +375,18 @@
 
 .heroMiniList {
   display: grid;
-  gap: 10px;
-  padding-top: 4px;
+  gap: 0;
+  padding-top: 8px;
 }
 
 .heroMiniRow {
   display: grid;
   grid-template-columns: 88px minmax(0, 1fr);
   gap: 12px;
-  padding: 10px 0;
-  border-top: 0;
-  background: #fafafa;
-  border-radius: 14px;
-  padding: 12px;
+  border-top: 1px solid #efefef;
+  background: transparent;
+  border-radius: 0;
+  padding: 14px 0;
 }
 
 .heroMiniThumb {
@@ -423,14 +424,18 @@
 }
 
 .actionsGrid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 0;
 }
 
 .actionCard {
   gap: 14px;
-  min-height: 184px;
-  padding: 18px;
-  background: #f7f7f7;
+  min-height: auto;
+  padding: 18px 0;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid #efefef;
 }
 
 .actionIcon {
@@ -485,7 +490,7 @@
 
 .sectionTitle {
   margin: 0;
-  font-size: clamp(24px, 2.8vw, 32px);
+  font-size: clamp(22px, 2.5vw, 30px);
   line-height: 1.2;
   letter-spacing: -0.02em;
   font-weight: 800;
@@ -498,7 +503,9 @@
 }
 
 .trustList {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 0;
 }
 
 .trustItem,
@@ -510,6 +517,13 @@
   border: 0;
   border-radius: 18px;
   background: #f7f7f7;
+}
+
+.trustItem {
+  padding: 18px 0;
+  border-radius: 0;
+  background: transparent;
+  border-top: 1px solid #efefef;
 }
 
 .toneBrand {
@@ -525,13 +539,15 @@
 }
 
 .cardGrid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .cardShell {
   gap: 12px;
-  padding: 16px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
 }
 
 .cardArt {
@@ -682,7 +698,7 @@
 }
 
 .marketPanel {
-  padding: 12px;
+  padding: 0;
   background: transparent;
   box-shadow: none;
 }
@@ -692,10 +708,11 @@
   grid-template-columns: minmax(0, 1.5fr) auto auto auto;
   align-items: center;
   gap: 12px;
-  padding: 18px 16px;
+  padding: 18px 0;
   border: 0;
-  border-radius: 14px;
-  background: #f7f7f7;
+  border-radius: 0;
+  background: transparent;
+  border-bottom: 1px solid #efefef;
 }
 
 .marketTitle {
@@ -790,7 +807,7 @@
   padding: 16px;
   border: 0;
   border-radius: 18px;
-  background: #f7f7f7;
+  background: #f5f5f5;
 }
 
 .metricValue {
@@ -838,10 +855,6 @@
   .journeySteps,
   .deepList,
   .directoryGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .searchMetaRail {
     grid-template-columns: 1fr;
   }
 }
