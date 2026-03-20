@@ -23,9 +23,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(255, 106, 0, 0.06), transparent 22%),
-    linear-gradient(180deg, #faf6ef 0%, var(--bg) 100%);
+  background: var(--bg);
   color: var(--text-primary);
   font-family: inherit;
   text-rendering: optimizeLegibility;
@@ -83,10 +81,9 @@ img {
   gap: 20px;
   margin-bottom: 22px;
   padding: 14px 16px;
-  border: 1px solid rgba(201, 193, 179, 0.9);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: var(--shadow-card);
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
 }
 
 .top-navigation__brand-block {
@@ -207,14 +204,14 @@ img {
 }
 
 .shared-button--secondary {
-  border-color: var(--border);
-  background: var(--surface);
+  border-color: transparent;
+  background: var(--surface-subtle);
   color: var(--text-primary);
 }
 
 .shared-button--secondary:hover {
   border-color: var(--border-strong);
-  background: #f7f6f2;
+  background: #eaeaea;
 }
 
 .status-badge {
@@ -224,7 +221,7 @@ img {
   min-height: 26px;
   padding: 0 10px;
   border-radius: var(--radius-pill);
-  border: 1px solid transparent;
+  border: 0;
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
@@ -246,8 +243,8 @@ img {
 }
 
 .status-badge--brand {
-  background: var(--accent-trust-soft);
-  color: var(--accent-trust);
+  background: #111111;
+  color: #ffffff;
 }
 
 .filter-chip {
@@ -257,8 +254,8 @@ img {
   min-height: 36px;
   padding: 0 14px;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--border);
-  background: var(--surface);
+  border: 0;
+  background: var(--surface-subtle);
   color: var(--text-secondary);
   cursor: pointer;
   transition:
@@ -268,14 +265,14 @@ img {
 }
 
 .filter-chip:hover {
-  background: #f7f6f2;
+  background: #ebebeb;
   color: var(--text-primary);
 }
 
 .filter-chip--active {
-  border-color: rgba(255, 111, 15, 0.22);
-  background: var(--accent-warm-soft);
-  color: var(--accent-warm);
+  border-color: #111111;
+  background: #111111;
+  color: #ffffff;
 }
 
 .filter-chip__label {
@@ -285,23 +282,19 @@ img {
 }
 
 .card-panel {
-  border: 1px solid rgba(228, 225, 216, 0.92);
-  border-radius: 18px;
+  border: 0;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.96);
-  box-shadow: var(--shadow-card);
+  box-shadow: none;
 }
 
 .card-panel--interactive {
   transition:
-    border-color 160ms ease,
-    box-shadow 160ms ease,
     transform 160ms ease;
 }
 
 .card-panel--interactive:hover {
-  border-color: rgba(17, 17, 17, 0.12);
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .section-header {
@@ -360,9 +353,9 @@ img {
   justify-content: center;
   width: 42px;
   height: 42px;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 12px;
-  background: var(--surface);
+  background: var(--surface-subtle);
   color: var(--text-secondary);
   transition:
     border-color 160ms ease,
@@ -371,7 +364,7 @@ img {
 }
 
 .marketing-icon-link:hover {
-  background: #f7f6f2;
+  background: #f0f0f0;
   border-color: var(--border-strong);
   color: var(--text-primary);
 }

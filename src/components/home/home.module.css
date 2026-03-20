@@ -26,10 +26,10 @@
 .routeAside,
 .routePanel,
 .directoryCard {
-  border: 1px solid rgba(228, 225, 216, 0.92);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: var(--shadow-card);
+  border: 0;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: none;
 }
 
 .searchPanel,
@@ -128,9 +128,9 @@
 
 .searchMetaBlock {
   padding: 14px 16px;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 16px;
-  background: #fbf8f2;
+  background: #f6f6f6;
 }
 
 .searchInputWrap {
@@ -139,9 +139,9 @@
   gap: 10px;
   min-height: 60px;
   padding: 0 16px;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 16px;
-  background: #ffffff;
+  background: #f5f5f5;
 }
 
 .searchIcon {
@@ -219,9 +219,9 @@
 }
 
 .chipActive {
-  background: var(--accent-warm-soft);
-  border-color: rgba(255, 111, 15, 0.18);
-  color: var(--accent-warm);
+  background: #111111;
+  border-color: #111111;
+  color: #ffffff;
 }
 
 .inlineLink,
@@ -246,8 +246,8 @@
   min-height: 30px;
   padding: 0 12px;
   border-radius: var(--radius-pill);
-  background: var(--accent-warm-soft);
-  color: var(--accent-warm);
+  background: #111111;
+  color: #ffffff;
   font-size: 12px;
   font-weight: 700;
 }
@@ -297,9 +297,9 @@
 
 .heroProofCard {
   padding: 16px 16px 18px;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 18px;
-  background: #ffffff;
+  background: #f7f7f7;
 }
 
 .heroProofValue {
@@ -314,10 +314,9 @@
   grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1fr);
   gap: 18px;
   padding: 18px;
-  border: 1px solid #141414;
+  border: 0;
   border-radius: 20px;
-  background:
-    linear-gradient(180deg, #ffffff 0%, #f6efe3 100%);
+  background: #ffffff;
 }
 
 .heroSpotlightMedia {
@@ -326,8 +325,7 @@
   min-height: 420px;
   border-radius: 18px;
   background:
-    radial-gradient(circle at top, rgba(255, 106, 0, 0.16), transparent 54%),
-    linear-gradient(180deg, #ffffff 0%, #f3ebde 100%);
+    linear-gradient(180deg, #fafafa 0%, #f0f0f0 100%);
 }
 
 .heroSpotlightImage {
@@ -384,7 +382,10 @@
   grid-template-columns: 88px minmax(0, 1fr);
   gap: 12px;
   padding: 10px 0;
-  border-top: 1px solid rgba(17, 17, 17, 0.08);
+  border-top: 0;
+  background: #fafafa;
+  border-radius: 14px;
+  padding: 12px;
 }
 
 .heroMiniThumb {
@@ -392,7 +393,7 @@
   place-items: center;
   min-height: 116px;
   border-radius: 14px;
-  background: #fbf7f0;
+  background: #f5f5f5;
 }
 
 .heroMiniImage {
@@ -429,7 +430,7 @@
   gap: 14px;
   min-height: 184px;
   padding: 18px;
-  border-top: 3px solid #111111;
+  background: #f7f7f7;
 }
 
 .actionIcon {
@@ -442,8 +443,8 @@
 }
 
 .accentBrand {
-  background: var(--accent-trust-soft);
-  color: var(--accent-trust);
+  background: #111111;
+  color: #ffffff;
 }
 
 .accentPositive {
@@ -506,21 +507,21 @@
 .infoCard,
 .filterCard {
   padding: 18px;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 18px;
-  background: #faf9f6;
+  background: #f7f7f7;
 }
 
 .toneBrand {
-  background: var(--accent-trust-soft);
+  background: #f3f3f3;
 }
 
 .tonePositive {
-  background: var(--positive-soft);
+  background: #f7fcf8;
 }
 
 .toneWarning {
-  background: var(--warning-soft);
+  background: #fafafa;
 }
 
 .cardGrid {
@@ -541,8 +542,7 @@
   padding: 18px;
   border-radius: 18px;
   background:
-    radial-gradient(circle at top, rgba(255, 106, 0, 0.14), transparent 52%),
-    linear-gradient(180deg, #fffdf9 0%, #f4ede1 100%);
+    linear-gradient(180deg, #f8f8f8 0%, #efefef 100%);
 }
 
 .cardRank {
@@ -693,9 +693,9 @@
   align-items: center;
   gap: 12px;
   padding: 18px 16px;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 14px;
-  background: #fffdf9;
+  background: #f7f7f7;
 }
 
 .marketTitle {
@@ -788,9 +788,9 @@
 
 .metricCard {
   padding: 16px;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 18px;
-  background: #faf9f6;
+  background: #f7f7f7;
 }
 
 .metricValue {
