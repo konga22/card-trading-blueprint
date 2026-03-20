@@ -15,12 +15,12 @@ export function MarketplaceLandingPage() {
     <main className={styles.main}>
       <HomeSearchBar />
       <HeroSection />
-      <QuickActionsGrid />
       <MarketSnapshot />
-      <TrustStrip />
       {discoverySections.map((section) => (
         <DiscoverySection key={section.key} section={section} />
       ))}
+      <TrustStrip />
+      <QuickActionsGrid />
       <BeginnerJourney />
       <DeepSearchPreview />
     </main>
