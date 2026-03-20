@@ -1,11 +1,19 @@
 import Link from "next/link";
+
 import styles from "./home.module.css";
-import { HomeCard, HomeChip } from "./home-ui";
 import { searchSuggestions } from "./home-data";
+import { HomeCard, HomeChip } from "./home-ui";
 
 function SearchIcon() {
   return (
-    <svg className={styles.searchIcon} width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+    <svg
+      className={styles.searchIcon}
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      aria-hidden="true"
+    >
       <circle cx="8" cy="8" r="4.75" stroke="currentColor" strokeWidth="1.5" />
       <path d="M11.8 11.8L15.2 15.2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
@@ -28,7 +36,7 @@ export function HomeSearchBar({ initialQuery = "" }: HomeSearchBarProps) {
               type="search"
               name="q"
               defaultValue={initialQuery}
-              placeholder="카드명, 카드번호, 세트를 검색해보세요"
+              placeholder="카드명, 카드번호, 세트명을 검색해 보세요."
               aria-label="카드 검색"
             />
           </div>
@@ -38,20 +46,16 @@ export function HomeSearchBar({ initialQuery = "" }: HomeSearchBarProps) {
             </button>
           </div>
         </form>
-        <div className={styles.chipRow} aria-label="검색 추천">
+        <div className={styles.chipRow} aria-label="추천 검색어">
           {searchSuggestions.map((item, index) => (
-            <HomeChip
-              key={item}
-              active={index === 0}
-              href={`/search?q=${encodeURIComponent(item)}`}
-            >
+            <HomeChip key={item} active={index === 0} href={`/search?q=${encodeURIComponent(item)}`}>
               {item}
             </HomeChip>
           ))}
         </div>
         <div className={styles.inlineLinks}>
           <Link className={styles.inlineLink} href="/search/advanced">
-            고급 탐색 열기
+            고급 검색 열기
           </Link>
         </div>
       </div>

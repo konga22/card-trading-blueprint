@@ -1,27 +1,27 @@
-import { SimpleInfoPage } from "@/components/home";
+import { SimpleInfoPage } from "@/components/home/SimpleInfoPage";
 
 export default function PrivacyRoutePage() {
   return (
     <SimpleInfoPage
       eyebrow="개인정보"
-      title="계정과 개인화 정보 처리 기준을 별도 페이지로 분리합니다"
-      description="로그인과 알림, 저장한 검색 조건처럼 개인화가 개입되는 영역은 홈에서 떼어냈습니다."
-      secondaryAction={{ label: "로그인", href: "/account/login" }}
+      title="계정과 개인화 데이터가 어디에 쓰이는지 분리해서 설명합니다."
+      description="로그인, 알림, 관심 카드처럼 개인 데이터가 개입하는 흐름은 별도 안내 페이지에서 책임을 분리합니다."
+      secondaryAction={{ label: "로그인 보기", href: "/account/login" }}
       cards={[
         {
           label: "계정 정보",
-          title: "인증과 기본 프로필",
-          description: "거래를 위한 계정 준비 과정에서 필요한 기본 정보 범위를 안내합니다.",
+          title: "기본 프로필과 인증 범위",
+          description: "거래를 위해 어떤 계정 정보가 필요한지, 어느 단계에서 입력되는지 정리합니다.",
         },
         {
           label: "개인화",
-          title: "관심 카드와 검색 조건",
-          description: "저장한 카드와 필터, 알림 기준이 어떻게 관리되는지 정리합니다.",
+          title: "관심 카드와 검색 기록",
+          description: "개인화 데이터가 검색과 알림 경험에 어떻게 연결되는지 설명합니다.",
         },
         {
           label: "알림",
-          title: "거래 관련 통지",
-          description: "가격 알림과 판매 상태 알림처럼 행동과 직접 연결되는 정보 흐름을 다룹니다.",
+          title: "거래 관련 알림 데이터",
+          description: "가격 알림, 판매 상태 알림처럼 거래와 직접 연결된 데이터 흐름을 구분합니다.",
         },
       ]}
     />

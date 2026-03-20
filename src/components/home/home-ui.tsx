@@ -58,7 +58,7 @@ export function HomeSection({
           <h2 className={styles.sectionTitle}>{title}</h2>
           {description ? <p className={styles.sectionDescription}>{description}</p> : null}
         </div>
-        {action ? action : null}
+        {action ?? null}
       </div>
       <div className={styles.sectionGrid}>{children}</div>
     </section>
@@ -80,7 +80,12 @@ export function HomeButton({
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
 }) {
-  const classNames = cx(styles.button, variant === "primary" ? styles.buttonPrimary : styles.buttonSecondary, className);
+  const classNames = cx(
+    styles.button,
+    variant === "primary" ? styles.buttonPrimary : styles.buttonSecondary,
+    className,
+  );
+
   if (href) {
     if (variant === "primary") {
       return (
@@ -125,14 +130,20 @@ export function HomeChip({
 }) {
   if (href) {
     return (
-      <Link className={cx(styles.chipLink, styles.chip, active && styles.chipActive, className)} href={href}>
+      <Link
+        className={cx(styles.chipLink, styles.chip, active && styles.chipActive, className)}
+        href={href}
+      >
         {children}
       </Link>
     );
   }
 
   return (
-    <FilterChip active={active} className={cx(styles.chip, active && styles.chipActive, className)}>
+    <FilterChip
+      active={active}
+      className={cx(styles.chip, active && styles.chipActive, className)}
+    >
       {children}
     </FilterChip>
   );
@@ -155,6 +166,7 @@ export function HomeStatusBadge({
         : tone === "warning"
           ? styles.statusWarning
           : styles.statusNeutral;
+
   return (
     <StatusBadge tone={tone} className={cx(styles.statusBadge, toneClass, className)}>
       {children}
@@ -162,7 +174,15 @@ export function HomeStatusBadge({
   );
 }
 
-function IconWrapper({ children, tone, className }: { children: ReactNode; tone: Tone; className?: string }) {
+function IconWrapper({
+  children,
+  tone,
+  className,
+}: {
+  children: ReactNode;
+  tone: Tone;
+  className?: string;
+}) {
   const toneClass =
     tone === "brand"
       ? styles.accentBrand
@@ -171,13 +191,17 @@ function IconWrapper({ children, tone, className }: { children: ReactNode; tone:
         : tone === "warning"
           ? styles.accentWarning
           : styles.accentNeutral;
+
   return <span className={cx(styles.actionIcon, toneClass, className)}>{children}</span>;
 }
 
 export function SparkIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-      <path d="M9 1.5L10.95 6.05L15.5 8L10.95 9.95L9 14.5L7.05 9.95L2.5 8L7.05 6.05L9 1.5Z" fill="currentColor" />
+      <path
+        d="M9 1.5L10.95 6.05L15.5 8L10.95 9.95L9 14.5L7.05 9.95L2.5 8L7.05 6.05L9 1.5Z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
@@ -185,8 +209,20 @@ export function SparkIcon() {
 export function TrendIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-      <path d="M2.5 12.5L6.5 8.5L9.5 11.5L15.5 5.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M11.7 5.5H15.5V9.3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M2.5 12.5L6.5 8.5L9.5 11.5L15.5 5.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.7 5.5H15.5V9.3"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -205,45 +241,40 @@ export function ChartIcon() {
 export function SellIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-      <path d="M4 6.5H14L12.8 12.8C12.7 13.3 12.3 13.7 11.8 13.7H6.2C5.7 13.7 5.3 13.3 5.2 12.8L4 6.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-      <path d="M6.5 6.5C6.5 4.9 7.8 3.5 9.4 3.5C11 3.5 12.3 4.8 12.3 6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path
+        d="M4 6.5H14L12.8 12.8C12.7 13.3 12.3 13.7 11.8 13.7H6.2C5.7 13.7 5.3 13.3 5.2 12.8L4 6.5Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.5 6.5C6.5 4.9 7.8 3.5 9.4 3.5C11 3.5 12.3 4.8 12.3 6.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
 
-export function HomeIconButton({
-  label,
-  children,
-  href,
-}: {
-  label: string;
-  children: ReactNode;
-  href?: string;
-}) {
-  if (href) {
-    return (
-      <Link className={styles.iconButton} href={href} aria-label={label}>
-        {children}
-      </Link>
-    );
-  }
-
-  return (
-    <button type="button" className={styles.iconButton} aria-label={label}>
-      {children}
-    </button>
-  );
-}
-
-export function AccentIcon({
-  icon,
+export function HomeActionIcon({
   tone,
+  kind,
 }: {
-  icon: "spark" | "trend" | "chart" | "sell";
   tone: Tone;
+  kind: "spark" | "trend" | "chart" | "sell";
 }) {
-  if (icon === "spark") return <IconWrapper tone={tone}><SparkIcon /></IconWrapper>;
-  if (icon === "trend") return <IconWrapper tone={tone}><TrendIcon /></IconWrapper>;
-  if (icon === "chart") return <IconWrapper tone={tone}><ChartIcon /></IconWrapper>;
-  return <IconWrapper tone={tone}><SellIcon /></IconWrapper>;
+  return (
+    <IconWrapper tone={tone}>
+      {kind === "spark" ? (
+        <SparkIcon />
+      ) : kind === "trend" ? (
+        <TrendIcon />
+      ) : kind === "chart" ? (
+        <ChartIcon />
+      ) : (
+        <SellIcon />
+      )}
+    </IconWrapper>
+  );
 }

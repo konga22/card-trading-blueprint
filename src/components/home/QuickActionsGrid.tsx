@@ -1,4 +1,5 @@
 import styles from "./home.module.css";
+
 import { quickActions } from "./home-data";
 import { AccentIcon, HomeCard, HomeSection } from "./home-ui";
 
@@ -11,7 +12,10 @@ const toneMap = {
 
 export function QuickActionsGrid() {
   return (
-    <HomeSection title="바로 시작" description="홈에서 가장 많이 쓰는 행동만 먼저 꺼냈습니다.">
+    <HomeSection
+      title="바로 시작할 수 있는 네 가지 흐름"
+      description="홈에서는 설명보다 다음 행동을 먼저 제안합니다."
+    >
       <div className={styles.actionsGrid}>
         {quickActions.map((action) => (
           <HomeCard key={action.title} className={styles.actionCard} href={action.href}>

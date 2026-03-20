@@ -40,22 +40,16 @@ export function SimpleInfoPage({
       actions={
         <>
           {secondaryAction ? (
-            <SecondaryButton href={secondaryAction.href}>
-              {secondaryAction.label}
-            </SecondaryButton>
+            <SecondaryButton href={secondaryAction.href}>{secondaryAction.label}</SecondaryButton>
           ) : null}
-          {primaryAction ? (
-            <PrimaryButton href={primaryAction.href}>
-              {primaryAction.label}
-            </PrimaryButton>
-          ) : null}
+          {primaryAction ? <PrimaryButton href={primaryAction.href}>{primaryAction.label}</PrimaryButton> : null}
         </>
       }
       aside={
         <div className={styles.infoCard}>
           <StatusBadge tone="neutral">안내</StatusBadge>
           <p className={styles.infoText}>
-            이 페이지는 홈에서 바로 내려가지 않고, 별도 화면으로 분리된 정보를 담고 있습니다.
+            이 화면은 실제 거래 기능을 바로 수행하기보다는, 다음 단계로 안전하게 넘어가기 위한 안내를 정리하는 용도입니다.
           </p>
         </div>
       }
@@ -72,4 +66,3 @@ export function SimpleInfoPage({
     </PageScaffold>
   );
 }
-

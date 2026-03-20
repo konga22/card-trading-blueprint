@@ -1,24 +1,24 @@
-import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
+import type { ReactNode } from "react";
+
 import "@/app/globals.css";
 
-const headingFont = Inter({
+const headingFont = IBM_Plex_Sans({
   subsets: ["latin"],
   variable: "--font-heading",
-  weight: ["600", "700", "800"],
+  weight: ["600", "700"],
 });
 
-const bodyFont = Inter({
+const bodyFont = IBM_Plex_Sans({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
   title: "Card Trading Blueprint",
-  description:
-    "A mobile-first card trading service homepage for beginners and collectors.",
+  description: "카드 검색, 시세 확인, 판매 준비 흐름을 분리해 정리한 카드 거래 블루프린트.",
 };
 
 type RootLayoutProps = Readonly<{

@@ -58,7 +58,7 @@ button {
 }
 
 ::selection {
-  background: rgba(124, 58, 237, 0.18);
+  background: rgba(37, 99, 235, 0.18);
 }
 
 .app-shell {
@@ -222,8 +222,8 @@ button {
 }
 
 .shared-button--secondary:hover {
-  border-color: rgba(111, 77, 230, 0.22);
-  background: #faf7ff;
+  border-color: rgba(37, 99, 235, 0.22);
+  background: #eff6ff;
 }
 
 .status-badge {
@@ -255,7 +255,7 @@ button {
 }
 
 .status-badge--brand {
-  background: rgba(124, 58, 237, 0.12);
+  background: rgba(37, 99, 235, 0.12);
   color: var(--brand-strong);
 }
 
@@ -282,8 +282,8 @@ button {
 }
 
 .filter-chip--active {
-  border-color: rgba(124, 58, 237, 0.24);
-  background: rgba(124, 58, 237, 0.1);
+  border-color: rgba(37, 99, 235, 0.24);
+  background: rgba(37, 99, 235, 0.1);
   color: var(--brand-strong);
 }
 
@@ -307,8 +307,8 @@ button {
 }
 
 .card-panel--interactive:hover {
-  border-color: rgba(124, 58, 237, 0.2);
-  box-shadow: 0 1px 2px rgba(68, 44, 122, 0.08), 0 10px 20px rgba(68, 44, 122, 0.06);
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: 0 1px 2px rgba(29, 78, 216, 0.08), 0 10px 20px rgba(29, 78, 216, 0.06);
 }
 
 .section-header {
@@ -380,8 +380,8 @@ button {
 }
 
 .marketing-icon-link:hover {
-  background: #faf7ff;
-  border-color: rgba(111, 77, 230, 0.22);
+  background: #eff6ff;
+  border-color: rgba(37, 99, 235, 0.22);
   color: var(--brand-strong);
 }
 

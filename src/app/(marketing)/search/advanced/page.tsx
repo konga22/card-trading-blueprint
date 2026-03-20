@@ -1,6 +1,5 @@
-import { AdvancedSearchPage } from "@/components/home";
+import { AdvancedSearchPage } from "@/components/home/AdvancedSearchPage";
 
 export default function AdvancedSearchRoutePage() {
   return <AdvancedSearchPage />;
 }
-

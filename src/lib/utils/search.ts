@@ -1,11 +1,11 @@
-import type { HomeCardItem, SearchSuggestion } from '../types';
+import type { HomeCardItem, SearchSuggestion } from "../types";
 
 export function normalizeSearchTerm(input: string): string {
-  return input.trim().toLowerCase().replace(/\s+/g, ' ');
+  return input.trim().toLowerCase().replace(/\s+/g, " ");
 }
 
-export function buildCardSearchLabel(card: Pick<HomeCardItem, 'name' | 'setName' | 'cardNumber'>): string {
-  return [card.name, card.setName, card.cardNumber].join(' · ');
+export function buildCardSearchLabel(card: Pick<HomeCardItem, "name" | "setName" | "cardNumber">): string {
+  return [card.name, card.setName, card.cardNumber].join(" · ");
 }
 
 function scoreStringMatch(source: string, query: string): number {
@@ -59,8 +59,7 @@ export function createCardSearchSuggestions(
       label: card.name,
       hint: buildCardSearchLabel(card),
       query: card.name,
-      kind: 'card',
+      kind: "card",
       score,
     }));
 }
-

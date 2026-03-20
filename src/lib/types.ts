@@ -4,13 +4,13 @@ import type {
   CatalogGameKey,
   CatalogLanguageKey,
   CatalogPurposeKey,
-} from './constants/catalog';
+} from "./constants/catalog";
 
-export type PriceTrendDirection = 'up' | 'down' | 'flat';
+export type PriceTrendDirection = "up" | "down" | "flat";
 
 export type HomeCardItem = {
   id: string;
-  game: Exclude<CatalogGameKey, 'all'>;
+  game: Exclude<CatalogGameKey, "all">;
   name: string;
   setName: string;
   cardNumber: string;
@@ -32,7 +32,7 @@ export type HomeCardItem = {
   gradeScore?: number;
 };
 
-export type DiscoverySectionKey = 'popular' | 'beginner' | 'inspection';
+export type DiscoverySectionKey = "popular" | "beginner" | "inspection";
 
 export type DiscoverySection = {
   key: DiscoverySectionKey;
@@ -43,7 +43,7 @@ export type DiscoverySection = {
 
 export type MarketSnapshotItem = {
   id: string;
-  game: Exclude<CatalogGameKey, 'all'>;
+  game: Exclude<CatalogGameKey, "all">;
   name: string;
   setName: string;
   cardNumber: string;
@@ -55,7 +55,7 @@ export type MarketSnapshotItem = {
   badges: readonly string[];
 };
 
-export type SearchShortcutKey = 'popular' | 'recent' | 'photo';
+export type SearchShortcutKey = "popular" | "recent" | "photo";
 
 export type SearchShortcut = {
   key: SearchShortcutKey;
@@ -64,7 +64,7 @@ export type SearchShortcut = {
   description: string;
 };
 
-export type SearchSuggestionKind = 'shortcut' | 'card' | 'filter';
+export type SearchSuggestionKind = "shortcut" | "card" | "filter";
 
 export type SearchSuggestion = {
   id: string;
@@ -79,6 +79,5 @@ export type SearchFilterChip = {
   key: string;
   label: string;
   value: string;
-  tone: 'neutral' | 'brand';
+  tone: "neutral" | "brand";
 };
-

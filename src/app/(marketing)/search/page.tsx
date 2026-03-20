@@ -1,4 +1,4 @@
-import { SearchHubPage } from "@/components/home";
+import { SearchHubPage } from "@/components/home/SearchHubPage";
 
 type SearchRoutePageProps = {
   searchParams: Promise<{
@@ -6,11 +6,8 @@ type SearchRoutePageProps = {
   }>;
 };
 
-export default async function SearchRoutePage({
-  searchParams,
-}: SearchRoutePageProps) {
+export default async function SearchRoutePage({ searchParams }: SearchRoutePageProps) {
   const params = await searchParams;
 
   return <SearchHubPage query={params.q ?? ""} />;
 }
-
