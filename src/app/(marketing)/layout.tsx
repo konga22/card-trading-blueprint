@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Search } from "lucide-react";
+import { Heart, Search } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { AppShell, TopNavigation } from "@/components/shared";
@@ -12,20 +12,29 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
   return (
     <AppShell>
       <TopNavigation
-        brand="Card Trading Blueprint"
-        tagline="검색, 시세 확인, 판매 준비를 분리해 보여주는 카드 거래 블루프린트"
+        brand="CARD TRADING"
+        tagline="Trading card resale market"
         links={[
           { label: "홈", href: "/" },
           { label: "탐색", href: "/discover" },
           { label: "시세", href: "/market" },
+          { label: "상세 검색", href: "/search/advanced" },
           { label: "안전거래", href: "/safety" },
         ]}
-        secondaryAction={{ label: "로그인", href: "/account/login" }}
+        utilityLinks={[
+          { label: "관심", href: "/notifications" },
+          { label: "로그인", href: "/account/login" },
+        ]}
         primaryAction={{ label: "판매 시작", href: "/sell/start" }}
         rightSlot={
-          <Link className="marketing-icon-link" href="/search" aria-label="카드 검색">
-            <Search size={18} />
-          </Link>
+          <>
+            <Link className="marketing-icon-link" href="/search" aria-label="카드 검색">
+              <Search size={18} />
+            </Link>
+            <Link className="marketing-icon-link" href="/notifications" aria-label="관심 카드">
+              <Heart size={18} />
+            </Link>
+          </>
         }
       />
 
