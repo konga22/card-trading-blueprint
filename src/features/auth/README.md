@@ -1,3 +1,10 @@
 # Auth Feature
 
-로그인 상태와 헤더 분기를 둡니다.
+`src/features/auth/` owns account-entry and account-support logic for this blueprint.
+
+Current scope is intentionally small:
+- login-related helper state
+- account-entry copy or route support
+- future expansion points for real authentication
+
+Do not place generic form components here.

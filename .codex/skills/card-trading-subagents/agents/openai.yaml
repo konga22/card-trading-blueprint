@@ -1,0 +1,7 @@
+interface:
+  display_name: "Card Trading Subagents"
+  short_description: "Install and route curated Codex subagents for this Next.js card-trading project."
+  default_prompt: "Use $card-trading-subagents to install or choose the right subagents for this card-trading-blueprint task."
+
+policy:
+  allow_implicit_invocation: true

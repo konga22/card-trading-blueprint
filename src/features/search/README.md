@@ -1,3 +1,13 @@
 # Search Feature
 
-검색, 자동완성, 필터 URL 동기화 로직을 둡니다.
+`src/features/search/` owns search-focused logic.
+
+## Responsibilities
+
+- search suggestions
+- shortcut chips
+- search hint text
+- URL-friendly search state helpers
+- query normalization and matching behavior
+
+Keep search rules shareable and predictable across routes.

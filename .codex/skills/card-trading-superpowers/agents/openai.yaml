@@ -1,0 +1,4 @@
+interface:
+  display_name: "Card Trading Superpowers"
+  short_description: "Superpowers workflow for this card trading repo"
+  default_prompt: "Use $card-trading-superpowers to plan, implement, debug, or verify work in this repository."

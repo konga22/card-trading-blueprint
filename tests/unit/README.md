@@ -1,3 +1,11 @@
 # Unit Tests
 
-컴포넌트/유틸 단위 테스트를 작성합니다.
+`tests/unit/` stores fast checks for pure logic and lightweight UI behavior.
+
+Good candidates:
+- taxonomy helpers
+- search normalization and suggestions
+- mock data assumptions
+- small rendering rules that do not need a browser flow
+
+Prefer deterministic tests over snapshot-heavy coverage.

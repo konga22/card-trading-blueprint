@@ -1,146 +1,91 @@
 # Figma Setup
 
-## 목표
+## 목적
 
-피그마에서 토스 느낌의 **맑고 짧고 정리된 정보 위계**를 유지하면서,
-코드로 바로 옮기기 쉬운 구조를 만든다.
+이 문서는 디자인 파일을 코드와 쉽게 연결하기 위한 운영 규칙을 정리한다. 시각 방향 자체는 `design-reference`와 `design-tokens`를 따른다.
 
-## 1. 파일 기본 세팅
+## 파일 구조
 
-### 프레임 폭
-- 기본 mobile frame: `375px`
-- 높이는 auto / content-based
+권장 페이지:
 
-### 페이지 권장
 - `00_Foundations`
 - `01_Components`
 - `02_Home`
-- `03_Buy`
-- `04_Sell`
+- `03_Discover`
+- `04_Search`
+- `05_Supporting Routes`
 
-## 2. 폰트
+## 프레임과 그리드
 
-공식 Toss 가이드에 따라:
-- 피그마에서는 `SF Pro`
-- Toss Product Sans 설치 시도 금지
+- 모바일 기준 프레임: `375px`
+- 태블릿/데스크톱 확장은 별도 프레임으로 관리
+- 기본 간격 단위: `8px`
+- 데스크톱은 12열 그리드 사용 가능
 
-## 3. 스타일 만들기
+## 스타일 세트
 
 ### Color Styles
-- bg/default
-- bg/subtle
-- surface/default
-- border/subtle
-- text/primary
-- text/secondary
-- text/tertiary
-- brand/default
-- brand/soft
-- positive/default
-- warning/default
+
+- `bg/default`
+- `surface/default`
+- `surface/subtle`
+- `border/default`
+- `text/primary`
+- `text/secondary`
+- `text/tertiary`
+- `brand/primary`
+- `brand/secondary`
+- `state/positive`
+- `state/attention`
+- `state/danger`
 
 ### Text Styles
-- hero/t1
-- section/t2
-- title/t3
-- body/t5
-- body/sub/st10
-- meta/st11
-- chip/st12
-- tiny/st13
 
-## 4. 컴포넌트 우선순위
+- `display`
+- `heading-1`
+- `heading-2`
+- `body-lg`
+- `body-sm`
+- `meta`
 
-먼저 아래를 만든다.
+### Effects
 
-1. Navigation
-2. SearchBar
-3. Button
-4. Chip
-5. Badge
-6. CardPanel
-7. MarketCard
-8. SectionHeader
+- `shadow/soft`
+- `shadow/card`
+- `shadow/hover`
 
-## 5. Variant 규칙
+## 컴포넌트 우선순위
 
-### Button
-- variant: primary / secondary / ghost
-- state: default / hover / pressed / disabled
+먼저 만드는 컴포넌트:
 
-### Chip
-- state: default / active
+1. Top navigation
+2. Search field
+3. Primary button
+4. Secondary button
+5. Filter chip
+6. Status badge
+7. Card panel
+8. Listing card
+9. Market row
+10. Section shell
 
-### Badge
-- tone: neutral / brand / positive / warning
+## 네이밍 규칙
 
-### CardPanel
-- state: default / hover / skeleton
+- 페이지: `Home`, `Discover`, `Market`, `SearchHub`
+- 섹션: `Home/Hero`, `Home/QuickActions`, `Home/TrustStrip`
+- 공용 컴포넌트: `Shared/Button/Primary`
+- 상태 variant는 `Component/Variant/State` 순서로 둔다.
 
-## 6. 오토레이아웃 규칙
+## 핸드오프 규칙
 
-- 상위 프레임은 대부분 vertical auto layout
-- 섹션 간 기본 gap: `24`
-- 카드 내부 gap: `8` 또는 `12`
-- 컴포넌트 padding을 먼저 믿고, gap은 보조로 사용
-- 정렬은 시작점 left align 우선
+- 텍스트는 실제 서비스 카피에 가까운 짧은 문장으로 작성한다.
+- 간격과 반경은 숫자 토큰으로 남긴다.
+- 컴포넌트 내부 패딩과 섹션 간 간격을 구분해서 기록한다.
+- 구현자가 추측해야 하는 애매한 상태 이름은 피한다.
 
-## 7. 홈 화면 섹션 순서
+## 확인 체크리스트
 
-1. Navigation
-2. SearchBar
-3. Hero
-4. QuickActions
-5. TrustStrip
-6. GameChips
-7. Discovery: popular
-8. Discovery: beginner
-9. Discovery: verified
-10. MarketSnapshot
-11. BeginnerJourney
-12. DeepSearchPreview
-13. Footer
-
-## 8. 카드 디자인 규칙
-
-카드 한 장에 넣는 정보는 최대 5개 층으로 제한한다.
-
-1. 대표 정보: 카드명
-2. 보조 정보: 세트/번호
-3. 가격 정보: 현재가/최근 거래가
-4. 신뢰 배지: 검수, 안전결제, 입문추천 등
-5. 액션: 상세 보기 또는 구매하기
-
-## 9. 금지사항
-
-- 텍스트 레이어 이름을 그대로 코드 구조로 쓰지 않는다.
-- 처음부터 세트/언어/에디션 필터를 캔버스 상단에 모두 띄우지 않는다.
-- 홈에서 캐러셀 남용 금지
-- 그라디언트/네온/유리질감 금지
-- 브랜드 블루 풀배경 큰 면적 남용 금지
-
-## 10. 개발 연결을 위한 레이어 네이밍 예시
-
-```text
-HomeScreen
-  TopNavigation
-  SearchBar
-  HeroSection
-  QuickActionsGrid
-  TrustStrip
-  GameChipRow
-  DiscoveryPopular
-  DiscoveryStarter
-  DiscoveryVerified
-  MarketSnapshot
-  BeginnerJourney
-  DeepSearchPreview
-  Footer
-```
-
-이런 식으로 **화면/섹션/컴포넌트 기준**으로 이름을 짓는다.
-
-## References
-
-- Toss Figma guide: https://developers-apps-in-toss.toss.im/design/prepare/design.html
-- TDS Mobile intro: https://tossmini-docs.toss.im/tds-mobile/
+- 컴포넌트가 재사용 가능한 단위로 나뉘어 있는가
+- 상태 변화가 variant로 정리되어 있는가
+- 모바일 기준 화면이 먼저 정리되어 있는가
+- 디자인 파일 이름과 코드 컴포넌트 이름이 지나치게 다르지 않은가

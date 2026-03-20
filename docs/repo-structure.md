@@ -1,49 +1,24 @@
 # Repo Structure
 
-이 문서는 **빈 폴더에서 시작할 때** 추천하는 구조다.
+## 목적
+
+이 문서는 이 저장소에서 파일을 어디에 두고 어떤 책임으로 나눌지 정리한다. 기준은 “라우트는 얇게, 화면 조합은 컴포넌트로, 도메인 로직은 기능 폴더로”다.
+
+## 권장 트리
 
 ```text
-card-trading/
+card-trading-blueprint/
   AGENT.md
   README.md
   docs/
-    design-reference.md
-    design-tokens.md
-    figma-setup.md
-    home-wireframe.md
-    catalog-taxonomy.md
-    repo-structure.md
-  skills/
-    card-trading-home/
-      SKILL.md
+  design-system/
   public/
-    images/
-      cards/
-      icons/
-      illustrations/
   src/
     app/
       (marketing)/
-        layout.tsx
-        page.tsx
-      globals.css
     components/
       home/
-        hero/
-        quick-actions/
-        search/
-        trust/
-        discovery/
-        market/
-        beginner/
-        deep-search/
       shared/
-        badge/
-        button/
-        card/
-        chip/
-        section/
-        shell/
     features/
       auth/
       catalog/
@@ -53,102 +28,64 @@ card-trading/
       mocks/
       utils/
     styles/
-      tokens.css
   tests/
     e2e/
     unit/
 ```
 
-## 폴더 역할
+## 폴더 책임
 
-### `app/`
-라우팅과 페이지 진입점.
-홈 화면은 여기서 시작한다.
+### `src/app/`
 
-### `components/home/`
-홈 전용 섹션 컴포넌트.
-다른 페이지에서 재사용 가능성이 낮은 것.
+라우트 엔트리와 레이아웃을 둔다. 라우트 파일은 최대한 얇게 유지하고 실제 화면 조합은 컴포넌트로 위임한다.
 
-### `components/shared/`
-버튼, 배지, 칩, 카드 셸 등 공통 컴포넌트.
+### `src/components/home/`
 
-### `features/catalog/`
-카드 카탈로그, 카드 마스터 데이터, 분류 관련 로직.
+홈, 탐색, 시세, 검색 허브, 입문, 판매 준비처럼 마케팅 라우트 전용 UI를 둔다. 다른 도메인에서 재사용할 계획이 없는 컴포넌트는 여기 둔다.
 
-### `features/search/`
-검색창, 자동완성, 최근 검색어, 필터 URL 동기화.
+### `src/components/shared/`
 
-### `features/auth/`
-로그인/마이페이지 헤더 상태 제어.
+버튼, 배지, 칩, 카드, 섹션 헤더, 쉘처럼 여러 라우트에서 재사용 가능한 UI를 둔다. 비즈니스 로직은 넣지 않는다.
 
-### `lib/mocks/`
-초기 홈에 필요한 mock 데이터.
-API 붙이기 전까지 여기서 공급한다.
+### `src/features/catalog/`
 
-### `styles/`
-글로벌 토큰 및 디자인 기반 규칙.
-색상/타이포/간격을 하드코딩하지 않는다.
+카드 분류 체계, 정렬, 사용자 노출 필터, 카탈로그 해석 규칙을 둔다.
 
-## 파일 생성 순서
+### `src/features/search/`
 
-1. `src/styles/tokens.css`
-2. `src/app/globals.css`
-3. `src/components/shared/*`
-4. `src/components/home/*`
-5. `src/app/(marketing)/page.tsx`
+검색 제안, 검색어 정규화, URL 상태 해석, 추천 검색어 규칙을 둔다.
 
-## 홈 페이지 핵심 컴포넌트 목록
+### `src/features/auth/`
 
-- `TopNavigation`
-- `HomeSearchBar`
-- `HeroSection`
-- `QuickActionsGrid`
-- `TrustStrip`
-- `GameChips`
-- `DiscoverySection`
-- `MarketSnapshot`
-- `BeginnerJourney`
-- `DeepSearchPreview`
+로그인과 계정 보조 상태처럼 계정 관련 흐름을 둔다. 현재는 보조 라우트 수준의 구조만 가진다.
 
-## 하지 말아야 할 구조
+### `src/lib/`
 
-### 피그마 레이어 이름 기반 구조
-```text
-Group12/
-Rectangle4/
-Frame23/
-Text11/
-```
+공용 타입, 상수, 목데이터, 유틸을 둔다. 프레임워크 의존이 없는 값과 함수는 가능하면 여기 둔다.
 
-이 구조는 금지.
+### `src/styles/`
 
-### 페이지와 공통 컴포넌트 혼합
-```text
-pages/HomePage.tsx 안에 Header, SearchBar, Card를 전부 인라인 작성
-```
+토큰과 전역 스타일 엔트리를 둔다. 실제 시각 규칙의 근거 문서는 `docs/`와 `design-system/`에 둔다.
 
-이 구조도 금지.
+### `tests/unit/`
 
----
+순수 함수, 분류 규칙, 검색 헬퍼, 가벼운 컴포넌트 동작을 검증한다.
 
-## 권장 네이밍
+### `tests/e2e/`
 
-- 섹션: `HeroSection`
-- 묶음: `QuickActionsGrid`
-- 공통 박스: `CardPanel`
-- 상태 배지: `StatusBadge`
-- 게임 선택 칩: `GameChip`
-- 가격 테이블 줄: `MarketRow`
+사용자 흐름 단위의 라우트 동작을 검증한다.
 
----
+## 파일 배치 규칙
 
-## 향후 확장 대비
+- 새 공용 UI는 `src/components/shared/` 아래에 둔다.
+- 홈 전용 섹션은 `src/components/home/` 아래에 둔다.
+- 라우트에서만 쓰는 조합 로직은 페이지 컴포넌트 파일에 두고, 반복되는 UI는 분리한다.
+- 도메인 상수와 키 문자열은 가능한 한 `src/lib/constants/` 또는 `src/features/*`에서 한 번만 정의한다.
+- 백엔드가 없을 때는 `src/lib/mocks/`를 단일 진입점으로 삼는다.
 
-홈 다음에 아래가 붙어도 구조가 안 무너지게 설계한다.
+## 피해야 할 구조
 
-- 구매 리스트 페이지
-- 판매 등록 플로우
-- 카드 상세
-- 위시리스트
-- 시세 상세
-- 판매자 프로필
+- 하나의 페이지 파일 안에 전체 UI와 데이터 규칙을 모두 넣는 구조
+- 공용 컴포넌트와 특정 라우트 전용 컴포넌트를 한 폴더에 섞는 구조
+- 사용하지 않는 프로토타입 페이지를 배럴 export로 계속 노출하는 구조
+- 같은 책임을 가진 라우트 조합 파일을 두 개 이상 유지하는 구조

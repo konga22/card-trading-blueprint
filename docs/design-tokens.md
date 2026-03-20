@@ -1,136 +1,137 @@
 # Design Tokens
 
-## 1. Fonts
+## 문서 목적
 
-### Figma
-- Primary: SF Pro Display / SF Pro Text
+이 문서는 구현과 디자인 문서가 같은 기준을 보도록 토큰을 정리한다. 값은 `ui-ux-pro-max` 데이터에서 선택한 서비스 랜딩, 마켓플레이스, 신뢰형 스타일 조합을 바탕으로 정리했다.
 
-### Web implementation
+## 색상
+
+### Core
+
+- Background: `#F8FAFC`
+- Surface: `#FFFFFF`
+- Surface subtle: `#EFF6FF`
+- Border: `#E2E8F0`
+
+### Text
+
+- Text primary: `#020617`
+- Text secondary: `#334155`
+- Text tertiary: `#64748B`
+
+### Brand
+
+- Brand primary: `#1E40AF`
+- Brand secondary: `#3B82F6`
+- Brand soft: `#DBEAFE`
+
+### Semantic
+
+- Positive: `#059669`
+- Attention: `#F97316`
+- Danger: `#DC2626`
+
+## 타이포그래피
+
+### 폰트 방향
+
+- Primary UI font: `IBM Plex Sans`
+- Korean fallback: `Noto Sans KR`
+- System fallback: `system-ui`, `sans-serif`
+
+권장 구현:
+
 ```css
 font-family:
-  -apple-system,
-  BlinkMacSystemFont,
-  "SF Pro Display",
-  "SF Pro Text",
-  "Pretendard Variable",
-  Pretendard,
+  "IBM Plex Sans",
   "Noto Sans KR",
-  "Segoe UI",
+  system-ui,
   sans-serif;
 ```
 
-## 2. Typography
+### 크기 스케일
 
-| Token | Font Size | Line Height | Usage |
+| Token | Size | Line Height | Usage |
 |---|---:|---:|---|
-| T1 | 30 | 40 | Hero title |
-| T2 | 26 | 35 | Section main title |
-| T3 | 22 | 31 | Content title |
-| T4 | 20 | 29 | Small title |
-| T5 | 17 | 25.5 | Main body |
-| T6 | 15 | 22.5 | Sub body |
-| T7 | 13 | 19.5 | Caption |
-| ST9 | 18 | 27 | Strong body |
-| ST10 | 16 | 24 | Card description |
-| ST11 | 14 | 21 | Secondary text |
-| ST12 | 12 | 18 | Chip / meta |
-| ST13 | 11 | 16.5 | Tiny meta |
+| `display` | 32 | 40 | 메인 히어로 제목 |
+| `heading-1` | 24 | 32 | 섹션 대표 제목 |
+| `heading-2` | 20 | 28 | 카드/패널 제목 |
+| `body-lg` | 16 | 24 | 본문 기본 |
+| `body-sm` | 14 | 20 | 보조 설명 |
+| `meta` | 12 | 18 | 칩, 배지, 메타 |
 
-### Weight guidance
-- 700: hero, major CTA emphasis
-- 600: section title, card title
-- 500: body, chip label
-- 400: rarely; avoid weak visual rhythm
+### 굵기
 
-## 3. Colors
+- `700`: 주요 제목, 핵심 수치
+- `600`: 섹션 제목, 카드 제목, 버튼
+- `500`: 메타와 보조 강조
+- `400`: 일반 본문
 
-### Core neutrals
-- Background: `#f9fafb`
-- Surface: `#ffffff`
-- Surface subtle: `#f2f4f6`
-- Border: `#e5e8eb`
+## 간격
 
-### Text
-- Primary: `#191f28`
-- Secondary: `#4e5968`
-- Tertiary: `#6b7684`
+- `4px`
+- `8px`
+- `12px`
+- `16px`
+- `20px`
+- `24px`
+- `32px`
+- `40px`
+- `48px`
 
-### Brand
-- Brand: `#3182f6`
-- Brand strong: `#1b64da`
-- Brand soft bg: `#e8f3ff`
+기본 단위는 `8px`로 본다.
 
-### Semantic
-- Positive: `#03b26c`
-- Warning / hot: `#f04452`
-- Caution bg: `#ffeeee`
-
-## 4. Radius
+## 반경
 
 - Small: `12px`
 - Medium: `16px`
 - Large: `20px`
 - Pill: `999px`
 
-## 5. Space scale
+## 그림자
 
-- 4
-- 8
-- 12
-- 16
-- 20
-- 24
-- 32
-- 40
-- 48
-
-## 6. Shadows
+그림자는 약하게만 사용한다.
 
 ```css
---shadow-card: 0 6px 18px rgba(2, 32, 71, 0.06);
---shadow-soft: 0 2px 8px rgba(2, 32, 71, 0.05);
+--shadow-soft: 0 2px 8px rgba(15, 23, 42, 0.05);
+--shadow-card: 0 4px 12px rgba(15, 23, 42, 0.08);
+--shadow-hover: 0 10px 24px rgba(15, 23, 42, 0.10);
 ```
 
-Use shadows sparingly.
-If a section already has border + contrast separation, remove shadow.
-
-## 7. Component style rules
+## 컴포넌트 토큰
 
 ### Buttons
-- Height: 44~48px
-- Radius: 14~16px
-- Primary: brand fill + white text
-- Secondary: subtle surface + primary text
-- Ghost: transparent + secondary text
 
-### Search field
-- Height: 48~52px
-- Radius: 16px
-- Background: surface
-- Border: subtle border or none + soft shadow
+- Height: `44px` to `48px`
+- Radius: `14px` to `16px`
+- Primary: `brand primary` 배경 + 흰색 텍스트
+- Secondary: `surface` 배경 + `text primary`
+
+### Search Field
+
+- Height: `48px` to `52px`
+- Radius: `16px`
+- Border: `1px solid border`
+- Background: `surface`
 
 ### Chips
-- Height: 32~36px
-- Radius: pill
-- Default bg: surface subtle
-- Active bg: brand soft bg
-- Active text: brand strong
+
+- Height: `32px` to `36px`
+- Radius: `pill`
+- Default bg: `surface`
+- Active bg: `brand soft`
+- Active text: `brand primary`
 
 ### Cards
-- Background: surface
-- Radius: 16~20px
-- Border: 1px subtle or none
-- Shadow: low only
 
-## 8. Motion
+- Radius: `16px` to `20px`
+- Border: `1px solid border`
+- Background: `surface`
+- Shadow: `shadow-card` 이하만 사용
 
-- Transition duration: 160~220ms
-- Ease: standard ease-out
-- Avoid springy or playful motion on primary finance-like surfaces
-- Hover should feel precise, not bouncy
+## 모션
 
-## References
-
-- TDS Typography: https://tossmini-docs.toss.im/tds-react-native/foundation/typography/
-- TDS Colors: https://tossmini-docs.toss.im/tds-react-native/foundation/colors/
-- Toss Figma guide: https://developers-apps-in-toss.toss.im/design/prepare/design.html
+- Duration: `150ms` to `220ms`
+- Timing: `ease-out`
+- Hover는 색상, 테두리, 그림자 변화 위주로 제한
+- `prefers-reduced-motion` 지원 필수

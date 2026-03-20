@@ -1,203 +1,107 @@
-# Design System Master File
+# Design System Master
 
-> **LOGIC:** When building a specific page, first check `design-system/pages/[page-name].md`.
-> If that file exists, its rules **override** this Master file.
-> If not, strictly follow the rules below.
+이 문서는 `Card Trading Blueprint`의 공통 디자인 기준이다. 페이지별 차이가 있으면 `design-system/card-trading-blueprint/pages/*.md`가 이 문서를 덮어쓴다.
 
----
+## Source Mix
 
-**Project:** Card Trading Blueprint
-**Generated:** 2026-03-18 15:27:58
-**Category:** Service Landing Page
+`ui-ux-pro-max` 로컬 데이터셋에서 아래 조합을 기준으로 선택했다.
 
----
+- Product fit: `Marketplace (P2P)`, `Service Landing Page`, `B2B Service`
+- Style fit: `Swiss Modernism 2.0`, `Accessible & Ethical`, `Trust & Authority`
+- Landing fit: `Hero + Features + CTA`, `Funnel (3-Step Conversion)`
+- Typography fit: `Financial Trust`, `Korean Modern`
 
-## Global Rules
+## Brand Personality
 
-### Color Palette
+- 빠르다
+- 분명하다
+- 신뢰를 먼저 보여준다
+- 거래 판단을 돕는다
 
-| Role | Hex | CSS Variable |
-|------|-----|--------------|
-| Primary | `#7C3AED` | `--color-primary` |
-| Secondary | `#A78BFA` | `--color-secondary` |
-| CTA/Accent | `#22C55E` | `--color-cta` |
-| Background | `#FAF5FF` | `--color-background` |
-| Text | `#4C1D95` | `--color-text` |
+## Core Palette
 
-**Color Notes:** Trust purple + transaction green
+| Role | Value |
+|---|---|
+| Background | `#F8FAFC` |
+| Surface | `#FFFFFF` |
+| Surface subtle | `#EFF6FF` |
+| Border | `#E2E8F0` |
+| Text primary | `#020617` |
+| Text secondary | `#334155` |
+| Text tertiary | `#64748B` |
+| Brand primary | `#1E40AF` |
+| Brand secondary | `#3B82F6` |
+| Brand soft | `#DBEAFE` |
+| Positive | `#059669` |
+| Attention | `#F97316` |
+| Danger | `#DC2626` |
 
-### Typography
+## Typography
 
-- **Heading Font:** Outfit
-- **Body Font:** Work Sans
-- **Mood:** geometric, modern, clean, balanced, contemporary, versatile
-- **Google Fonts:** [Outfit + Work Sans](https://fonts.google.com/share?selection.family=Outfit:wght@300;400;500;600;700|Work+Sans:wght@300;400;500;600;700)
+- Primary: `IBM Plex Sans`
+- Korean fallback: `Noto Sans KR`
+- Weights: `400`, `500`, `600`, `700`
 
-**CSS Import:**
-```css
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap');
-```
+Recommended usage:
+- Hero title: `32/40`, `700`
+- Section title: `24/32`, `700`
+- Card title: `20/28`, `600`
+- Body: `16/24`, `400`
+- Secondary body: `14/20`, `400`
+- Meta: `12/18`, `500`
 
-### Spacing Variables
+## Layout System
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--space-xs` | `4px` / `0.25rem` | Tight gaps |
-| `--space-sm` | `8px` / `0.5rem` | Icon gaps, inline spacing |
-| `--space-md` | `16px` / `1rem` | Standard padding |
-| `--space-lg` | `24px` / `1.5rem` | Section padding |
-| `--space-xl` | `32px` / `2rem` | Large gaps |
-| `--space-2xl` | `48px` / `3rem` | Section margins |
-| `--space-3xl` | `64px` / `4rem` | Hero padding |
+- Base unit: `8px`
+- Radius: `12`, `16`, `20`, `999`
+- Mobile-first
+- Desktop grid can expand to 12 columns, but content hierarchy matters more than decorative layout
 
-### Shadow Depths
+## Interaction Rules
 
-| Level | Value | Usage |
-|-------|-------|-------|
-| `--shadow-sm` | `0 1px 2px rgba(0,0,0,0.05)` | Subtle lift |
-| `--shadow-md` | `0 4px 6px rgba(0,0,0,0.1)` | Cards, buttons |
-| `--shadow-lg` | `0 10px 15px rgba(0,0,0,0.1)` | Modals, dropdowns |
-| `--shadow-xl` | `0 20px 25px rgba(0,0,0,0.15)` | Hero images, featured cards |
+- Motion duration: `150ms` to `220ms`
+- Hover: border, background, shadow, or color change only
+- No layout-shifting hover
+- Visible focus styles required
+- `prefers-reduced-motion` support required
 
----
-
-## Component Specs
+## Component Rules
 
 ### Buttons
 
-```css
-/* Primary Button */
-.btn-primary {
-  background: #22C55E;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 200ms ease;
-  cursor: pointer;
-}
+- Height: `44-48px`
+- Primary button carries the main action
+- Secondary button stays visually quieter than the primary
 
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
+### Search
 
-/* Secondary Button */
-.btn-secondary {
-  background: transparent;
-  color: #7C3AED;
-  border: 2px solid #7C3AED;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 200ms ease;
-  cursor: pointer;
-}
-```
+- Search is a first-class action, not a footer utility
+- Input height: `48-52px`
+- Placeholder must describe searchable attributes, not marketing copy
+
+### Chips
+
+- Default: neutral surface
+- Active: brand soft background with brand text
+- Use chips for narrowing, not for explaining
 
 ### Cards
 
-```css
-.card {
-  background: #FAF5FF;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: var(--shadow-md);
-  transition: all 200ms ease;
-  cursor: pointer;
-}
+- Card content should balance price and trust signals
+- Avoid overly tall cards with large empty decoration
+- Show only the numbers that help immediate judgment
 
-.card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
-}
-```
+## Accessibility Rules
 
-### Inputs
+- Minimum interactive target: `44x44`
+- High contrast on text and primary actions
+- State should not rely on color alone
+- Keyboard access and focus visibility required
 
-```css
-.input {
-  padding: 12px 16px;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 200ms ease;
-}
+## Anti-Patterns
 
-.input:focus {
-  border-color: #7C3AED;
-  outline: none;
-  box-shadow: 0 0 0 3px #7C3AED20;
-}
-```
-
-### Modals
-
-```css
-.modal-overlay {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-}
-
-.modal {
-  background: white;
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: var(--shadow-xl);
-  max-width: 500px;
-  width: 90%;
-}
-```
-
----
-
-## Style Guidelines
-
-**Style:** Social Proof-Focused
-
-**Keywords:** Testimonials prominent, client logos displayed, case studies sections, reviews/ratings, user avatars, success metrics, credibility markers
-
-**Best For:** B2B SaaS, professional services, premium products, e-commerce conversion pages, established brands
-
-**Key Effects:** Testimonial carousel animations, logo grid fade-in, stat counter animations (number count-up), review star ratings
-
-### Page Pattern
-
-**Pattern Name:** Marketplace / Directory
-
-- **Conversion Strategy:**  map hover pins,  card carousel, Search bar is the CTA. Reduce friction to search. Popular searches suggestions.
-- **CTA Placement:** Hero Search Bar + Navbar 'List your item'
-- **Section Order:** 1. Hero (Search focused), 2. Categories, 3. Featured Listings, 4. Trust/Safety, 5. CTA (Become a host/seller)
-
----
-
-## Anti-Patterns (Do NOT Use)
-
-- ❌ Complex navigation
-- ❌ Hidden contact info
-
-### Additional Forbidden Patterns
-
-- ❌ **Emojis as icons** — Use SVG icons (Heroicons, Lucide, Simple Icons)
-- ❌ **Missing cursor:pointer** — All clickable elements must have cursor:pointer
-- ❌ **Layout-shifting hovers** — Avoid scale transforms that shift layout
-- ❌ **Low contrast text** — Maintain 4.5:1 minimum contrast ratio
-- ❌ **Instant state changes** — Always use transitions (150-300ms)
-- ❌ **Invisible focus states** — Focus states must be visible for a11y
-
----
-
-## Pre-Delivery Checklist
-
-Before delivering any UI code, verify:
-
-- [ ] No emojis used as icons (use SVG instead)
-- [ ] All icons from consistent icon set (Heroicons/Lucide)
-- [ ] `cursor-pointer` on all clickable elements
-- [ ] Hover states with smooth transitions (150-300ms)
-- [ ] Light mode: text contrast 4.5:1 minimum
-- [ ] Focus states visible for keyboard navigation
-- [ ] `prefers-reduced-motion` respected
-- [ ] Responsive: 375px, 768px, 1024px, 1440px
-- [ ] No content hidden behind fixed navbars
-- [ ] No horizontal scroll on mobile
+- Neon or entertainment-first palettes
+- Overbuilt chart surfaces on the first screen
+- Trust information hidden until the detail page
+- Decorative gradients competing with transaction data
+- Giant hero copy that pushes search below the fold
