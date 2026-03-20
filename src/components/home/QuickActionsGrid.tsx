@@ -1,7 +1,7 @@
 import styles from "./home.module.css";
 
 import { quickActions } from "./home-data";
-import { AccentIcon, HomeCard, HomeSection } from "./home-ui";
+import { HomeActionIcon, HomeCard, HomeSection } from "./home-ui";
 
 const toneMap = {
   brand: "brand",
@@ -19,7 +19,7 @@ export function QuickActionsGrid() {
       <div className={styles.actionsGrid}>
         {quickActions.map((action) => (
           <HomeCard key={action.title} className={styles.actionCard} href={action.href}>
-            <AccentIcon icon={action.icon} tone={toneMap[action.accent]} />
+            <HomeActionIcon kind={action.icon} tone={toneMap[action.accent]} />
             <div>
               <p className={styles.actionTitle}>{action.title}</p>
               <p className={styles.actionDescription}>{action.description}</p>

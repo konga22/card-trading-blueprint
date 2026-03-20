@@ -12,14 +12,14 @@ describe("search helpers", () => {
   });
 
   it("creates card suggestions from the mock catalog", () => {
-    const suggestions = createHomepageSearchSuggestions("pikachu");
+    const suggestions = createHomepageSearchSuggestions("피카츄");
 
     expect(suggestions.length).toBeGreaterThan(0);
-    expect(suggestions[0].label.toLowerCase()).toContain("pikachu");
+    expect(suggestions[0].label).toContain("피카츄");
   });
 
   it("keeps the chip metadata compact", () => {
     expect(SEARCH_FILTER_CHIPS[0].tone).toBe("brand");
-    expect(createSearchHint("")).toBe("Search by card name, card number, or set name.");
+    expect(createSearchHint("")).toBe("카드명, 카드 번호, 세트명을 입력해 검색해 보세요.");
   });
 });

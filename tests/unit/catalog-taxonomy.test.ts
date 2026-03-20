@@ -19,7 +19,7 @@ describe("catalog taxonomy", () => {
 
   it("exposes a compact primary filter set for the home screen", () => {
     expect(CATALOG_HOMEPAGE_PRIMARY_FILTERS).toHaveLength(4);
-    expect(CATALOG_HOMEPAGE_PRIMARY_FILTERS[0].label).toBe("All games");
+    expect(CATALOG_HOMEPAGE_PRIMARY_FILTERS[0].label).toBe("전체");
   });
 
   it("includes search-friendly sort labels", () => {
