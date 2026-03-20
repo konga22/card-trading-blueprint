@@ -40,12 +40,12 @@ export function SearchHubPage({ query = "" }: SearchHubPageProps) {
   return (
     <PageScaffold
       eyebrow="Search"
-      title={normalizedQuery ? `"${query}" 검색 결과` : "카드 검색을 시작하는 허브"}
+      title={normalizedQuery ? `"${query}" 검색 결과` : "카드 검색을 시작하는 화면"}
       description={createSearchHint(query)}
       actions={
         <>
-          <SecondaryButton href="/discover">탐색 보기</SecondaryButton>
-          <PrimaryButton href="/search/advanced">상세 검색 열기</PrimaryButton>
+          <SecondaryButton href="/discover">탐색 페이지</SecondaryButton>
+          <PrimaryButton href="/search/advanced">상세 검색</PrimaryButton>
         </>
       }
       aside={
@@ -62,9 +62,6 @@ export function SearchHubPage({ query = "" }: SearchHubPageProps) {
               </HomeChip>
             ))}
           </div>
-          <p className={styles.infoText}>
-            검색 허브는 빠른 추천, 필터 진입, 결과 확인을 한 화면에서 이어주는 역할을 합니다.
-          </p>
         </div>
       }
     >
@@ -73,7 +70,7 @@ export function SearchHubPage({ query = "" }: SearchHubPageProps) {
       <section className={styles.routePanel}>
         <div className={styles.sectionHeading}>
           <div className={styles.eyebrow}>추천 검색</div>
-          <h2 className={styles.sectionTitle}>바로 이어서 볼 수 있는 카드와 필터</h2>
+          <h2 className={styles.sectionTitle}>바로 이어서 볼 수 있는 카드</h2>
         </div>
         <div className={styles.infoGrid}>
           {suggestions.slice(0, 4).map((suggestion) => (
@@ -122,9 +119,9 @@ export function SearchHubPage({ query = "" }: SearchHubPageProps) {
         ) : (
           <CardPanel className={styles.infoCard}>
             <div className={styles.infoLabel}>검색 결과 없음</div>
-            <h3 className={styles.infoTitle}>다른 조합으로 다시 찾아보세요</h3>
+            <h3 className={styles.infoTitle}>다른 키워드로 다시 찾아보세요</h3>
             <p className={styles.infoText}>
-              카드번호, 세트명, 언어, 상태 중 하나를 바꿔 검색하면 결과를 더 정확하게 좁힐 수 있습니다.
+              카드번호, 세트명, 언어 중 하나로 바꾸면 더 정확하게 좁혀질 수 있습니다.
             </p>
           </CardPanel>
         )}
