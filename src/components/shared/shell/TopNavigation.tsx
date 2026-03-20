@@ -38,9 +38,6 @@ export function TopNavigation({
     <header className={cn("top-navigation", className)} {...props}>
       <div className="top-navigation__brand-block">
         <Link className="top-navigation__brand" href="/" aria-label="Home">
-          <span className="top-navigation__brand-mark" aria-hidden="true">
-            CT
-          </span>
           <span className="top-navigation__brand-copy">
             <span className="top-navigation__brand-name">{brand}</span>
             {tagline ? <span className="top-navigation__tagline">{tagline}</span> : null}

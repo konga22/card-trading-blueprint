@@ -10,8 +10,8 @@ export function MarketPage() {
   return (
     <PageScaffold
       eyebrow="Market"
-      title="최근 거래가와 거래 반응을 같이 읽으며 가격 감각을 익히는 시세 화면"
-      description="호가보다 최근 거래 흐름을 먼저 읽고, 다음 행동으로 안전하게 이어지도록 설계한 시세 페이지입니다."
+      title="최근 거래가와 거래 반응을 같이 읽으면 가격 감각이 훨씬 빨라집니다"
+      description="호가보다 최근 거래 흐름을 먼저 보고, 다음 행동으로 안전하게 이어지도록 구성한 시세 화면입니다."
       actions={
         <>
           <SecondaryButton href="/discover">탐색으로 돌아가기</SecondaryButton>
@@ -33,23 +33,23 @@ export function MarketPage() {
       <div className={styles.infoGrid}>
         <CardPanel className={styles.infoCard}>
           <StatusBadge tone="neutral">기준</StatusBadge>
-          <h2 className={styles.infoTitle}>최근 거래 중심</h2>
+          <h2 className={styles.infoTitle}>최근 거래 중심 판단</h2>
           <p className={styles.infoText}>
-            복잡한 차트보다 실제 거래 가격과 거래량부터 먼저 보여주도록 정리했습니다.
+            복잡한 차트보다 실제 거래 가격과 거래량 변화를 먼저 보여줍니다.
           </p>
         </CardPanel>
         <CardPanel className={styles.infoCard}>
           <StatusBadge tone="brand">신뢰</StatusBadge>
           <h2 className={styles.infoTitle}>가격 옆의 거래 신호</h2>
           <p className={styles.infoText}>
-            안전결제와 검수, 판매자 신호를 가격 판단과 떨어뜨리지 않고 함께 둡니다.
+            안전결제와 검수 가능 여부를 가격 단위와 함께 읽도록 배치했습니다.
           </p>
         </CardPanel>
         <CardPanel className={styles.infoCard}>
           <StatusBadge tone="positive">다음 행동</StatusBadge>
           <h2 className={styles.infoTitle}>판매 준비로 자연스럽게 연결</h2>
           <p className={styles.infoText}>
-            가격 감각을 익힌 뒤 바로 판매 시작 화면으로 이어지도록 흐름을 분리했습니다.
+            가격 감각을 익힌 뒤 바로 판매 준비 화면으로 넘어갈 수 있습니다.
           </p>
         </CardPanel>
       </div>

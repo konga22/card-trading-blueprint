@@ -10,7 +10,7 @@ export function AdvancedSearchPage() {
     <PageScaffold
       eyebrow="Advanced Search"
       title="필요한 순간에만 깊게 들어가는 상세 검색"
-      description="세트, 카드번호, 언어, 상태, 그레이딩 점수처럼 홈 검색만으로 부족한 조건을 차분하게 좁혀갑니다."
+      description="세트, 카드번호, 언어, 상태, 그레이딩 점수처럼 일반 검색만으로 부족한 조건을 차분하게 조합합니다."
       actions={
         <>
           <SecondaryButton href="/search">기본 검색</SecondaryButton>
@@ -19,10 +19,9 @@ export function AdvancedSearchPage() {
       }
       aside={
         <div className={styles.infoStack}>
-          <StatusBadge tone="brand">정밀 검색</StatusBadge>
+          <StatusBadge tone="brand">정교한 검색</StatusBadge>
           <p className={styles.infoText}>
-            입문자에게는 과하지 않게, 숙련 사용자에게는 충분히 정교하게 보이도록 조건을
-            단계별로 나눴습니다.
+            입문자에게는 과하지 않게, 숙련 사용자에게는 충분히 정밀하게 보이도록 조건을 단계별로 나눴습니다.
           </p>
         </div>
       }

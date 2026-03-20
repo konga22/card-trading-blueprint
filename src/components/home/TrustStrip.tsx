@@ -14,7 +14,7 @@ export function TrustStrip() {
   return (
     <HomeSection
       title="가격 옆에서 바로 읽히는 신뢰 정보"
-      description="안전결제, 검수, 판매자 평점, 최근 거래 흐름을 첫 화면에서 먼저 보여줍니다."
+      description="안전결제, 검수 가능, 판매자 평점, 최근 거래 흐름을 한 번에 읽을 수 있게 정리했습니다."
     >
       <div className={styles.trustList}>
         {trustItems.map((item) => (

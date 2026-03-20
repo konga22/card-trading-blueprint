@@ -17,7 +17,7 @@ export const SEARCH_SHORTCUTS: readonly SearchShortcut[] = [
     key: "popular",
     label: "인기 검색",
     query: "피카츄",
-    description: "홈에서 가장 자주 찾는 카드부터 빠르게 살펴봅니다.",
+    description: "홈에서 가장 자주 찾는 카드부터 바로 이어집니다.",
   },
   {
     key: "recent",
@@ -27,7 +27,7 @@ export const SEARCH_SHORTCUTS: readonly SearchShortcut[] = [
   },
   {
     key: "photo",
-    label: "사진 검색 준비중",
+    label: "사진 검색 준비",
     query: "photo-search",
     description: "이미지 기반 검색이 들어올 자리를 먼저 안내합니다.",
   },

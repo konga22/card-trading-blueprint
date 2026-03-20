@@ -5,7 +5,7 @@
 .main,
 .routePage {
   display: grid;
-  gap: 24px;
+  gap: 32px;
 }
 
 .routeBody,
@@ -27,7 +27,7 @@
 .routePanel,
 .directoryCard {
   border: 1px solid rgba(228, 225, 216, 0.92);
-  border-radius: 24px;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.96);
   box-shadow: var(--shadow-card);
 }
@@ -42,15 +42,17 @@
   padding: 22px;
 }
 
-.searchBar,
-.searchIntro,
-.searchCluster,
+.searchLead,
+.searchMetaRail,
+.searchMetaBlock,
 .routeCopy,
 .sectionHeading,
-.heroIntro,
-.heroShowcase,
+.heroMain,
 .heroProofCard,
-.heroVisualCard,
+.heroSpotlightBody,
+.heroSpotlightCopy,
+.heroMiniCopy,
+.routeCopy,
 .marketName,
 .directoryCard,
 .infoCard,
@@ -65,7 +67,6 @@
 
 .searchClusters,
 .heroProofGrid,
-.heroVisualGrid,
 .actionsGrid,
 .trustList,
 .cardGrid,
@@ -81,24 +82,66 @@
 }
 
 .searchPanel {
-  padding: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.3fr) minmax(260px, 0.9fr);
+  align-items: start;
+  gap: 18px;
+  padding: 20px;
 }
 
 .searchForm {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 12px;
+  align-self: stretch;
+}
+
+.searchLead {
+  gap: 12px;
+}
+
+.searchLeadHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.searchTitle {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+.searchLeadText {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.searchMetaRail {
+  gap: 12px;
+}
+
+.searchMetaBlock {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fbf8f2;
 }
 
 .searchInputWrap {
   display: flex;
   align-items: center;
   gap: 10px;
-  min-height: 56px;
+  min-height: 60px;
   padding: 0 16px;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: #faf9f6;
+  background: #ffffff;
 }
 
 .searchIcon {
@@ -124,9 +167,9 @@
 
 .searchSubmit {
   min-width: 94px;
-  min-height: 56px;
+  min-height: 60px;
   padding: 0 18px;
-  border-radius: 16px;
+  border-radius: 14px;
   background: var(--brand);
   color: var(--text-inverse);
   font-size: 14px;
@@ -136,10 +179,6 @@
 
 .searchSubmit:hover {
   background: var(--brand-strong);
-}
-
-.searchClusters {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .searchClusterLabel,
@@ -165,7 +204,7 @@
 .cardBadges {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
 .chip,
@@ -195,9 +234,9 @@
 
 .heroPanel {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
-  gap: 18px;
-  padding: 26px;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.92fr);
+  gap: 24px;
+  padding: 24px;
 }
 
 .heroBadge {
@@ -213,11 +252,15 @@
   font-weight: 700;
 }
 
+.heroMain {
+  gap: 18px;
+}
+
 .heroTitle,
 .routeTitle {
   margin: 0;
-  font-size: clamp(30px, 4vw, 48px);
-  line-height: 1.08;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.02;
   letter-spacing: -0.03em;
   font-weight: 800;
 }
@@ -249,13 +292,14 @@
 
 .heroProofGrid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .heroProofCard {
-  padding: 16px;
+  padding: 16px 16px 18px;
   border: 1px solid var(--border);
   border-radius: 18px;
-  background: #faf9f6;
+  background: #ffffff;
 }
 
 .heroProofValue {
@@ -265,38 +309,110 @@
   color: var(--text-primary);
 }
 
-.heroVisualGrid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.heroVisualCard {
-  padding: 16px;
-  border: 1px solid var(--border);
+.heroSpotlight {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid #141414;
   border-radius: 20px;
-  background: linear-gradient(180deg, #fffdf9 0%, #f7f3eb 100%);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f6efe3 100%);
 }
 
-.heroVisualImageWrap {
+.heroSpotlightMedia {
   display: grid;
   place-items: center;
-  min-height: 156px;
+  min-height: 420px;
   border-radius: 18px;
   background:
-    radial-gradient(circle at top, rgba(255, 111, 15, 0.18), transparent 58%),
-    linear-gradient(180deg, #ffffff 0%, #f4efe4 100%);
+    radial-gradient(circle at top, rgba(255, 106, 0, 0.16), transparent 54%),
+    linear-gradient(180deg, #ffffff 0%, #f3ebde 100%);
 }
 
-.heroVisualImage {
-  width: min(100%, 140px);
+.heroSpotlightImage {
+  width: min(100%, 260px);
   height: auto;
   object-fit: contain;
 }
 
-.heroVisualTitle {
+.heroSpotlightBody {
+  gap: 16px;
+}
+
+.heroSpotlightTop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.heroSpotlightTitle {
   margin: 0;
-  font-size: 18px;
-  line-height: 1.3;
+  font-size: clamp(24px, 2vw, 32px);
+  line-height: 1.12;
   font-weight: 700;
+}
+
+.heroSpotlightMeta,
+.heroSpotlightSupport {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.heroSpotlightPrice {
+  font-family:
+    var(--font-data),
+    "Space Grotesk",
+    var(--font-ui),
+    sans-serif;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.heroMiniList {
+  display: grid;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.heroMiniRow {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.heroMiniThumb {
+  display: grid;
+  place-items: center;
+  min-height: 116px;
+  border-radius: 14px;
+  background: #fbf7f0;
+}
+
+.heroMiniImage {
+  width: min(100%, 68px);
+  height: auto;
+  object-fit: contain;
+}
+
+.heroMiniTitle {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.heroMiniMeta {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.55;
 }
 
 .button,
@@ -310,9 +426,10 @@
 }
 
 .actionCard {
-  gap: 12px;
-  min-height: 178px;
+  gap: 14px;
+  min-height: 184px;
   padding: 18px;
+  border-top: 3px solid #111111;
 }
 
 .actionIcon {
@@ -408,6 +525,7 @@
 
 .cardGrid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .cardShell {
@@ -417,17 +535,69 @@
 
 .cardArt {
   display: grid;
-  place-items: center;
-  min-height: 174px;
-  padding: 12px;
+  position: relative;
+  align-content: center;
+  min-height: 224px;
+  padding: 18px;
   border-radius: 18px;
   background:
-    radial-gradient(circle at top, rgba(37, 99, 235, 0.1), transparent 55%),
-    linear-gradient(180deg, #ffffff 0%, #f4efe4 100%);
+    radial-gradient(circle at top, rgba(255, 106, 0, 0.14), transparent 52%),
+    linear-gradient(180deg, #fffdf9 0%, #f4ede1 100%);
+}
+
+.cardRank {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(17, 17, 17, 0.9);
+  color: var(--text-inverse);
+  font-family:
+    var(--font-data),
+    "Space Grotesk",
+    var(--font-ui),
+    sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cardPlaceholder {
+  display: grid;
+  gap: 8px;
+  align-content: end;
+  min-height: 100%;
+  padding-top: 44px;
+}
+
+.cardPlaceholderLabel {
+  color: var(--text-tertiary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cardPlaceholderTitle {
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.cardPlaceholderMeta {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .cardArtMedia {
-  width: min(100%, 148px);
+  width: min(100%, 180px);
   height: auto;
   object-fit: contain;
 }
@@ -512,7 +682,9 @@
 }
 
 .marketPanel {
-  padding: 16px;
+  padding: 12px;
+  background: transparent;
+  box-shadow: none;
 }
 
 .marketRow {
@@ -520,10 +692,10 @@
   grid-template-columns: minmax(0, 1.5fr) auto auto auto;
   align-items: center;
   gap: 12px;
-  padding: 16px;
+  padding: 18px 16px;
   border: 1px solid var(--border);
-  border-radius: 18px;
-  background: #faf9f6;
+  border-radius: 14px;
+  background: #fffdf9;
 }
 
 .marketTitle {
@@ -582,8 +754,8 @@
 .routeHero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
-  gap: 20px;
-  padding: 24px;
+  gap: 24px;
+  padding: 26px;
 }
 
 .routeAside {
@@ -638,7 +810,9 @@
 }
 
 @media (max-width: 1100px) {
+  .searchPanel,
   .heroPanel,
+  .heroSpotlight,
   .routeHero,
   .actionsGrid,
   .trustList,
@@ -652,18 +826,22 @@
   }
 
   .heroProofGrid,
-  .heroVisualGrid {
+  .metricGrid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 900px) {
+  .searchPanel,
   .heroPanel,
   .routeHero,
-  .searchClusters,
   .journeySteps,
   .deepList,
   .directoryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .searchMetaRail {
     grid-template-columns: 1fr;
   }
 }
@@ -688,6 +866,8 @@
   }
 
   .searchForm,
+  .searchPanel,
+  .heroSpotlight,
   .actionsGrid,
   .trustList,
   .cardGrid,
@@ -702,6 +882,10 @@
   .marketRow {
     grid-template-columns: 1fr;
     align-items: start;
+  }
+
+  .heroMiniRow {
+    grid-template-columns: 72px minmax(0, 1fr);
   }
 
   .sectionHeader {

@@ -2,97 +2,69 @@
 
 ## 문서 목적
 
-이 문서는 구현과 디자인이 같은 기준으로 움직이도록 토큰을 고정한다.  
-현재 토큰의 목표는 “KREAM처럼 정갈하고, 번개장터처럼 정보가 빠르며, 당근처럼 부담 없고, 포켓몬 자산과도 충돌하지 않는 화면”이다.
+이 문서는 카드 거래 홈과 보조 라우트가 같은 시각 기준으로 움직이도록 토큰을 고정한다.  
+이번 토큰은 KREAM의 차분함, 번개장터의 거래형 정보 밀도, 당근의 따뜻한 진입감을 섞되 보라색 AI 마켓플레이스 톤은 버린다.
 
 ## Color
 
 ### Base
 
-- `bg.canvas`: `#F5F4F1`
-- `bg.surface`: `#FFFFFF`
-- `bg.subtle`: `#F0EEE8`
-- `border.default`: `#E4E1D8`
-- `border.strong`: `#CBC5B7`
+- `bg.canvas`: `#f6f1e8`
+- `bg.surface`: `#ffffff`
+- `bg.subtle`: `#f2ece1`
+- `bg.emphasis`: `#111111`
+- `border.default`: `#ded7ca`
+- `border.strong`: `#c9c1b3`
 
 ### Text
 
 - `text.primary`: `#111111`
-- `text.secondary`: `#4B5563`
-- `text.tertiary`: `#7A7F87`
-- `text.inverse`: `#FFFFFF`
+- `text.secondary`: `#5a5f66`
+- `text.tertiary`: `#8a8f96`
+- `text.inverse`: `#ffffff`
 
 ### Action
 
 - `action.primary`: `#111111`
 - `action.primary-hover`: `#262626`
-- `action.secondary`: `#F3F4F6`
-- `action.secondary-hover`: `#E5E7EB`
+- `action.secondary`: `#f7f3ec`
+- `action.secondary-hover`: `#efe8dc`
 
 ### Accent
 
-- `accent.warm`: `#FF6F0F`
-- `accent.warm-soft`: `#FFF1E7`
-- `accent.trust`: `#2563EB`
-- `accent.trust-soft`: `#EAF2FF`
+- `accent.warm`: `#ff6a00`
+- `accent.warm-soft`: `#fff1e6`
+- `accent.trust`: `#2563eb`
+- `accent.trust-soft`: `#eaf2ff`
+- `accent.safe`: `#0f9d58`
+- `accent.safe-soft`: `#eaf8f0`
 
-### State
+## 색상 규칙
 
-- `state.success`: `#0F9D58`
-- `state.success-soft`: `#EAF8F0`
-- `state.warning`: `#F59E0B`
-- `state.warning-soft`: `#FFF7E6`
-- `state.danger`: `#D64545`
-- `state.danger-soft`: `#FDECEC`
-
-## Color Rules
-
-- 기본 화면은 뉴트럴 톤 위주로 유지한다.
-- 메인 CTA는 검정 계열을 기본으로 쓴다.
-- `accent.warm`은 입문, 근처 거래, 가벼운 추천, 판매 유도에 사용한다.
-- `accent.trust`는 인증, 안전결제, 검수, 보호 장치에 사용한다.
-- 포켓몬 이미지는 자체 색이 강하므로, 배경은 채도를 올리지 않는다.
+- 메인 CTA는 검정 계열로 고정한다.
+- 강조는 오렌지 하나, 신뢰는 블루 하나로 끝낸다.
+- 카드 이미지는 색이 강하므로 배경은 저채도여야 한다.
+- 신뢰 정보는 파랑/초록 계열, 거래 주의는 오렌지 계열을 쓴다.
 
 ## Typography
 
 ### Font Families
 
-- UI 기본: `Pretendard Variable`
-- 보조 fallback: `Noto Sans KR`
-- 숫자/시세 모듈: `Space Grotesk`
-
-권장 선언:
-
-```css
-font-family:
-  "Pretendard Variable",
-  "Noto Sans KR",
-  system-ui,
-  sans-serif;
-```
-
-가격/시세 행:
-
-```css
-font-family:
-  "Space Grotesk",
-  "Pretendard Variable",
-  "Noto Sans KR",
-  sans-serif;
-font-variant-numeric: tabular-nums;
-```
+- UI 기본: `Noto Sans KR`
+- 숫자/가격/시세: `Space Grotesk`
 
 ### Type Scale
 
 | Token | Size | Line Height | Weight | Usage |
 |---|---:|---:|---:|---|
-| `display` | 40 | 46 | 700 | 메인 히어로 제목 |
-| `headline-1` | 28 | 34 | 700 | 섹션 대표 제목 |
-| `headline-2` | 22 | 30 | 700 | 카드/모듈 제목 |
-| `title` | 18 | 26 | 600 | 카드명, 검색 블록 제목 |
-| `body` | 16 | 24 | 400 | 기본 본문 |
-| `body-sm` | 14 | 20 | 400 | 보조 설명 |
-| `meta` | 12 | 18 | 500 | 배지, 상태, 보조 수치 |
+| `display` | 52 | 56 | 800 | 홈 메인 타이틀 |
+| `hero-subtitle` | 18 | 28 | 500 | 히어로 설명 |
+| `headline-1` | 30 | 36 | 800 | 섹션 타이틀 |
+| `headline-2` | 22 | 30 | 700 | 카드/모듈 타이틀 |
+| `title` | 18 | 26 | 700 | 상품명 |
+| `body` | 15 | 24 | 400 | 기본 본문 |
+| `body-sm` | 13 | 20 | 400 | 보조 설명 |
+| `meta` | 12 | 18 | 700 | 배지, 라벨, 카테고리 |
 
 ## Spacing
 
@@ -107,102 +79,73 @@ font-variant-numeric: tabular-nums;
 - `56`
 - `72`
 
-기본 리듬은 `8px` 단위다.  
-모바일에서는 `16`, `20`, `24`를 중심으로 쓰고, 데스크톱에서만 `40` 이상을 넓힌다.
+규칙:
+- 8px 그리드를 기본으로 쓴다.
+- 홈 상단은 24, 32, 40 단위를 중심으로 리듬을 만든다.
+- 카드 내부는 12, 16, 20 단위를 우선 사용한다.
 
 ## Radius
 
 - `radius.sm`: `10px`
 - `radius.md`: `14px`
 - `radius.lg`: `18px`
+- `radius.xl`: `22px`
 - `radius.pill`: `999px`
 
 규칙:
-
-- 카드와 패널은 둥글지만 말랑하게 보이면 안 된다.
-- 현재 프로젝트에는 `24px` 이상 큰 radius를 쓰지 않는다.
+- 이전보다 모서리를 덜 둥글게 가져간다.
+- 서비스형 정보 카드에는 `14px`~`18px`만 쓴다.
+- 히어로/대형 패널만 `22px`를 허용한다.
 
 ## Shadow
 
 ```css
---shadow-rest: 0 1px 2px rgba(17, 17, 17, 0.04);
 --shadow-card: 0 6px 18px rgba(17, 17, 17, 0.06);
---shadow-hover: 0 10px 28px rgba(17, 17, 17, 0.10);
+--shadow-hover: 0 12px 28px rgba(17, 17, 17, 0.10);
+--shadow-soft: 0 1px 2px rgba(17, 17, 17, 0.04);
 ```
 
 규칙:
+- 그림자는 존재감만 주고, 존재 이유가 되면 안 된다.
+- 평면에 가까운 카드 위에 얕은 그림자만 사용한다.
 
-- 그림자는 보조 수단이다.
-- 정보 카드의 기본 강조는 border와 간격으로 해결한다.
+## Component Rules
 
-## Component Tokens
+### Search Dock
 
-### Search Field
+- 높이: `60px`
+- 입력창 배경은 밝은 종이톤
+- 검색 버튼은 검정 단색
+- 추천 검색과 게임 카테고리를 같은 패널 안에서 바로 읽게 배치
 
-- Height: `52px`
-- Radius: `14px`
-- Padding X: `16px`
-- Background: `bg.surface`
-- Border: `1px solid border.default`
+### Hero
 
-규칙:
+- 왼쪽: 큰 카피, 짧은 설명, CTA, 핵심 기준 3개
+- 오른쪽: 대표 카드 1장 + 가격/신뢰 정보
+- 카드 3장을 동일한 크기로 늘어놓는 방식 금지
 
-- 플레이스홀더는 마케팅 문구 대신 검색 가능한 속성을 말해야 한다.
-- 예: `카드명, 카드번호, 시리즈, 등급으로 검색`
+### Listing Card
 
-### Primary Button
+- 상단은 이미지 또는 정보형 플레이스홀더
+- 하단은 카드명, 세트, 가격, 최근 거래, 신뢰 배지 순서
+- “사진이 없을 때”는 깨진 느낌이 아니라 텍스트 블록으로 의도적으로 처리
 
-- Height: `48px`
-- Radius: `14px`
-- Background: `action.primary`
-- Text: `text.inverse`
+### Market Table
 
-### Secondary Button
-
-- Height: `48px`
-- Radius: `14px`
-- Background: `action.secondary`
-- Text: `text.primary`
-
-### Chips
-
-- Height: `34px`
-- Padding X: `14px`
-- Radius: `pill`
-- Default: `bg.surface + border.default`
-- Active: `accent.warm-soft + accent.warm`
-
-### Cards
-
-- Image area ratio: `4:5` 또는 `1:1`
-- Radius: `14px` 또는 `18px`
-- Border: `1px solid border.default`
-- Background: `bg.surface`
-
-카드 내부에서 항상 우선되는 정보:
-
-1. 카드명
-2. 번호/등급/상태
-3. 현재 가격 또는 최근 거래 정보
-4. 검수/안전/판매 방식 힌트
+- 차트보다 행(row) 기반 시세 테이블이 우선
+- 컬럼은 `카드명 / 거래건수 / 현재가격 / 변동률`
+- 숫자는 `Space Grotesk` 고정
 
 ## Motion
 
-- Duration: `120ms` to `180ms`
-- Timing: `ease-out`
-- Hover는 색, border, shadow 변화 중심
-- 위아래로 크게 움직이는 애니메이션 금지
-
-## Image Rules
-
-- 포켓몬 도감/캐릭터 이미지는 `pokemonkorea.co.kr`에서만 가져온다.
-- 카드 이미지는 `pokemoncard.co.kr`에서만 가져온다.
-- 카드 이미지는 프레임 잘라먹기 없이 정면 기준으로 다룬다.
-- 배경 합성, 과한 drop-shadow, 비공식 outline 처리 금지
+- `120ms` ~ `180ms`
+- hover는 색, 테두리, 그림자만 변한다
+- 확대/축소 모션은 최소화한다
 
 ## Anti-Patterns
 
-- 보라색 중심 AI SaaS 팔레트
-- 채도 높은 그라데이션 위에 작은 회색 텍스트
-- 지나치게 큰 라운드와 쿠션감
-- 의미 없이 떠다니는 glass panel
+- 보라색 중심 마켓플레이스 팔레트
+- 과한 글래스모피즘
+- 장난감 같은 컬러 블록 레이아웃
+- 카드보다 배경이 더 튀는 구성
+- 둥근 모서리만 잔뜩 키운 “AI 랜딩” 분위기

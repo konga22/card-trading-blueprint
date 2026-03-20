@@ -27,69 +27,74 @@ type HomeSearchBarProps = {
 export function HomeSearchBar({ initialQuery = "" }: HomeSearchBarProps) {
   return (
     <HomeCard className={styles.searchPanel}>
-      <div className={styles.searchBar}>
-        <div className={styles.searchIntro}>
+      <div className={styles.searchLead}>
+        <div className={styles.searchLeadHeader}>
           <div className={styles.eyebrow}>Search Dock</div>
-          <h2 className={styles.sectionTitle}>카드명, 카드번호, 세트명으로 바로 찾기</h2>
-          <p className={styles.sectionDescription}>
-            홈에서 가장 먼저 해야 할 행동은 검색입니다. 예쁜 배너보다 빠른 입력이 먼저
-            보이도록 설계했습니다.
-          </p>
+          <Link className={styles.inlineLink} href="/search/advanced">
+            상세 검색
+          </Link>
+        </div>
+        <h2 className={styles.searchTitle}>카드명, 카드번호, 세트명으로 바로 찾기</h2>
+        <p className={styles.searchLeadText}>
+          번개장터처럼 검색이 시작점이고, KREAM처럼 가격 기준을 빠르게 읽을 수 있게 홈 구조를 다시 잡았습니다.
+        </p>
+      </div>
+
+      <form action="/search" className={styles.searchForm}>
+        <div className={styles.searchInputWrap}>
+          <SearchIcon />
+          <input
+            className={styles.searchInput}
+            type="search"
+            name="q"
+            defaultValue={initialQuery}
+            placeholder="피카츄 ex, OP05-060, 포켓몬 카드 151"
+            aria-label="카드 검색"
+          />
+        </div>
+        <div className={styles.searchActions}>
+          <button className={styles.searchSubmit} type="submit">
+            검색
+          </button>
+        </div>
+      </form>
+
+      <div className={styles.searchMetaRail}>
+        <div className={styles.searchMetaBlock}>
+          <div className={styles.searchClusterLabel}>추천 검색</div>
+          <div className={styles.chipRow} aria-label="추천 검색어">
+            {searchSuggestions.map((item, index) => (
+              <HomeChip key={item} active={index === 0} href={`/search?q=${encodeURIComponent(item)}`}>
+                {item}
+              </HomeChip>
+            ))}
+          </div>
         </div>
 
-        <form action="/search" className={styles.searchForm}>
-          <div className={styles.searchInputWrap}>
-            <SearchIcon />
-            <input
-              className={styles.searchInput}
-              type="search"
-              name="q"
-              defaultValue={initialQuery}
-              placeholder="카드명, 카드번호, 세트명으로 검색"
-              aria-label="카드 검색"
-            />
-          </div>
-          <div className={styles.searchActions}>
-            <button className={styles.searchSubmit} type="submit">
-              검색
-            </button>
-          </div>
-        </form>
-
-        <div className={styles.searchClusters}>
-          <div className={styles.searchCluster}>
-            <div className={styles.searchClusterLabel}>빠른 검색</div>
-            <div className={styles.chipRow} aria-label="추천 검색어">
-              {searchSuggestions.map((item, index) => (
-                <HomeChip key={item} active={index === 0} href={`/search?q=${encodeURIComponent(item)}`}>
-                  {item}
-                </HomeChip>
-              ))}
-            </div>
-          </div>
-
-          <div className={styles.searchCluster}>
-            <div className={styles.searchClusterLabel}>게임 선택</div>
-            <div className={styles.chipRow} aria-label="게임 필터">
-              {gameTabs.map((item, index) => (
-                <HomeChip
-                  key={item.key}
-                  active={index === 0}
-                  href={`/search?q=${encodeURIComponent(item.label)}`}
-                >
-                  {item.label}
-                </HomeChip>
-              ))}
-            </div>
+        <div className={styles.searchMetaBlock}>
+          <div className={styles.searchClusterLabel}>게임 카테고리</div>
+          <div className={styles.chipRow} aria-label="게임 필터">
+            {gameTabs.map((item, index) => (
+              <HomeChip
+                key={item.key}
+                active={index === 0}
+                href={item.key === "all" ? "/search" : `/search?q=${encodeURIComponent(item.label)}`}
+              >
+                {item.label}
+              </HomeChip>
+            ))}
           </div>
         </div>
 
         <div className={styles.inlineLinks}>
-          <Link className={styles.inlineLink} href="/search/advanced">
-            상세 검색 열기
-          </Link>
           <Link className={styles.inlineLink} href="/discover">
-            게임별 큐레이션 보기
+            게임별 탐색 보기
+          </Link>
+          <Link className={styles.inlineLink} href="/market">
+            최근 거래 흐름 보기
+          </Link>
+          <Link className={styles.inlineLink} href="/sell/start">
+            판매 준비 체크
           </Link>
         </div>
       </div>

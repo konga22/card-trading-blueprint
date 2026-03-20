@@ -13,8 +13,8 @@ export function BeginnerPage() {
   return (
     <PageScaffold
       eyebrow="Beginner"
-      title="처음 거래할 때 필요한 정보만 골라 모은 입문 가이드"
-      description="무엇부터 봐야 하는지, 가격과 상태를 어떤 순서로 읽어야 하는지, 신뢰 신호는 무엇인지 이 페이지에서 먼저 정리합니다."
+      title="처음 거래할 때 필요한 정보만 고른 입문 가이드"
+      description="무엇부터 봐야 하는지, 가격과 상태를 어떤 순서로 읽어야 하는지, 신뢰 신호는 무엇인지 먼저 정리했습니다."
       actions={
         <>
           <SecondaryButton href="/discover">게임별 카드 보기</SecondaryButton>

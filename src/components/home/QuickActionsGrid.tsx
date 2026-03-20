@@ -13,8 +13,8 @@ const toneMap = {
 export function QuickActionsGrid() {
   return (
     <HomeSection
-      title="바로 고를 수 있는 네 가지 시작점"
-      description="무엇을 눌러야 할지 모를 때를 해결하는 빠른 진입 카드입니다."
+      title="바로 골라 들어가는 네 가지 시작점"
+      description="무엇부터 봐야 할지 헤매지 않도록 홈에서 첫 행동을 분명하게 나눴습니다."
     >
       <div className={styles.actionsGrid}>
         {quickActions.map((action) => (

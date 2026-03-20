@@ -48,7 +48,7 @@ export const CATALOG_GAME_LABELS: Record<CatalogGameKey, string> = {
 
 export const CATALOG_PURPOSE_LABELS: Record<CatalogPurposeKey, string> = {
   beginner: "입문",
-  collection: "수집",
+  collection: "컬렉션",
   play: "플레이",
   rare: "희소 카드",
 };

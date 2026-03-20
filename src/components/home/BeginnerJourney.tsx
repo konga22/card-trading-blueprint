@@ -8,7 +8,7 @@ export function BeginnerJourney() {
     <HomeSection
       eyebrow="Beginner Journey"
       title="처음 거래하는 사람을 위한 3단계"
-      description="게임 파악, 시세 비교, 신뢰 확인 순서로 따라가면 초반 판단이 쉬워집니다."
+      description="게임 파악, 시세 비교, 신뢰 확인 순서로 따라가면 초반 판단이 훨씬 쉬워집니다."
     >
       <div className={styles.journeySteps}>
         {beginnerSteps.map((step, index) => (

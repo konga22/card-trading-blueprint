@@ -49,8 +49,7 @@ export function SimpleInfoPage({
         <div className={styles.infoCard}>
           <StatusBadge tone="neutral">안내</StatusBadge>
           <p className={styles.infoText}>
-            이 화면은 실제 거래 기능을 바로 수행하기보다, 다음 단계로 안전하게
-            이어지기 위한 보조 안내를 정리하는 용도입니다.
+            이 화면은 실제 거래 기능을 직접 실행하기보다, 다음 단계로 안전하게 이어지기 위한 보조 설명을 정리하는 용도입니다.
           </p>
         </div>
       }

@@ -1,73 +1,38 @@
-# Landing Page Overrides
+# Landing Page Override
 
-이 문서는 홈/랜딩 페이지에만 적용하는 예외 규칙이다.  
-공통 기준은 [MASTER.md](/Users/USER/Contacts/찌르레기/card-trading-blueprint/design-system/card-trading-blueprint/MASTER.md)를 따른다.
+이 문서는 `MASTER.md`의 규칙 위에 홈 랜딩 전용 규칙만 덮어쓴다.
 
-## 목표
+## Landing Goals
 
-랜딩 페이지는 서비스 소개보다 행동 선택이 먼저여야 한다.  
-사용자는 홈에서 아래 셋 중 하나를 빠르게 고를 수 있어야 한다.
-
-1. 카드 검색
-2. 시세 확인
-3. 판매 시작
+- 사용자가 첫 화면에서 바로 검색하거나 시세로 이동하게 만든다
+- 카드 거래 서비스처럼 보이게 만든다
+- 포켓몬 공식 카드 비주얼은 대표 상품처럼 보여준다
 
 ## Section Order
 
-1. Top navigation
-2. Search dock
-3. Hero split
-4. Game tabs
-5. Quick paths
-6. Trust strip
-7. Market snapshot
-8. Discovery shelves
-9. Beginner journey
-10. Deep search preview
-11. Seller entry
-12. Footer
+1. Top Navigation
+2. Search Dock
+3. Hero Spotlight
+4. Quick Paths
+5. Market Table
+6. Trust Strip
+7. Discovery Shelves
+8. Beginner Journey
+9. Deep Search Preview
+10. Footer
 
-## Hero Rules
+## Landing-Specific Rules
 
-- 검색창이 카피보다 먼저 보여야 한다.
-- 제목은 2줄 이내.
-- 오른쪽 비주얼은 포켓몬 공식 이미지 또는 공식 카드 이미지 한정.
-- 큰 배경 그래픽은 쓰지 않는다.
+- 히어로 카피보다 검색창이 먼저 보여야 한다
+- 대표 카드는 1장 크게, 나머지는 보조 정보로만 사용한다
+- 추천 검색어와 게임 카테고리는 홈 상단에 둔다
+- 홈 카드 섹션은 “왜 보여주는지” 타이틀이 있어야 한다
+- 이미지가 없는 카드도 깨진 것처럼 보이면 안 된다
 
-## CTA Rules
+## What To Avoid On Landing
 
-- 1순위 CTA는 검색 또는 검색 제출
-- 2순위 CTA는 판매 시작
-- 한 화면 안에서 강한 CTA는 최대 2개
-- “더 알아보기” 같은 모호한 CTA는 줄인다
-
-## Density Rules
-
-- 첫 화면은 상품 전체 목록이 아니라 선택지를 보여준다.
-- 카드 섹션 하나에는 4개에서 8개 사이가 적당하다.
-- 마켓 스냅샷은 숫자 3개 이하를 핵심 비교 기준으로 쓴다.
-
-## Trust Placement
-
-- 안전결제, 검수, 거래 보호는 히어로 아래에서 바로 보여준다.
-- 정책 링크만 던지지 말고 요약 문장으로 먼저 설명한다.
-- 초보자가 “여기서 거래해도 되는지”를 홈에서 판단할 수 있어야 한다.
-
-## Tone Overrides
-
-- MASTER보다 조금 더 친절하게 쓴다.
-- 하지만 말투가 커뮤니티 공지처럼 가벼워지면 안 된다.
-- “포켓몬이 귀엽다”가 아니라 “거래가 쉽고 믿을 만하다”가 먼저 읽혀야 한다.
-
-## Responsive Notes
-
-- 모바일 첫 화면에 검색창, 게임 탭, 주요 CTA가 모두 들어와야 한다.
-- 히어로 비주얼은 모바일에서 세로 길이를 잡아먹지 않게 축소한다.
-- 신뢰 배지와 게임 칩은 가로 스크롤을 허용하되, 첫 항목만 보이고 끝나면 안 된다.
-
-## Avoid
-
-- 포켓몬 캐릭터를 배경 패턴처럼 반복 배치
-- 첫 화면에서 3개 이상의 강한 버튼 경쟁
-- 카드 거래 서비스인데 블로그/팬카페처럼 보이는 헤더
-- 홈에서 상세 검색 폼 전체를 다 펼쳐놓는 구성
+- 캐릭터 팬페이지 같은 비주얼
+- 세 개 이상의 동등한 히어로 카드
+- 차트형 시세 히어로
+- 설명 문단이 긴 홈
+- 카드 이미지 워터마크/왜곡/잘림

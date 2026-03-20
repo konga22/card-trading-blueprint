@@ -18,8 +18,7 @@ const dataFont = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Card Trading Blueprint",
-  description:
-    "검색, 시세 확인, 판매 준비를 분리해 보여주는 카드 거래 블루프린트",
+  description: "검색, 시세 확인, 판매 준비를 분리해 보여주는 카드 거래 블루프린트.",
 };
 
 type RootLayoutProps = Readonly<{

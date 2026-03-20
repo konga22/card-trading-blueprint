@@ -1,8 +1,8 @@
 import { CardPanel, PrimaryButton, SecondaryButton, StatusBadge } from "@/components/shared";
 import {
+  SEARCH_FILTER_CHIPS,
   createHomepageSearchSuggestions,
   createSearchHint,
-  SEARCH_FILTER_CHIPS,
 } from "@/features/search";
 import { HOME_CARD_FIXTURES, normalizeSearchTerm, scoreCardMatch } from "@/lib";
 
@@ -56,7 +56,7 @@ export function SearchHubPage({ query = "" }: SearchHubPageProps) {
               <HomeChip
                 key={chip.key}
                 active={chip.tone === "brand"}
-                href={`/search?q=${encodeURIComponent(chip.label)}`}
+                href={chip.value === "all" ? "/search" : `/search?q=${encodeURIComponent(chip.label)}`}
               >
                 {chip.label}
               </HomeChip>
@@ -96,7 +96,12 @@ export function SearchHubPage({ query = "" }: SearchHubPageProps) {
         {results.length ? (
           <div className={styles.resultsGrid}>
             {results.map((card) => (
-              <CardPanel key={card.id} className={styles.infoCard}>
+              <CardPanel
+                key={card.id}
+                className={styles.infoCard}
+                interactive
+                href={`/search?q=${encodeURIComponent(card.name)}`}
+              >
                 <div className={styles.cardRow}>
                   <div>
                     <h3 className={styles.resultTitle}>{card.name}</h3>

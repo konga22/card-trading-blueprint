@@ -16,8 +16,8 @@ export function MarketplaceLandingPage() {
       <HomeSearchBar />
       <HeroSection />
       <QuickActionsGrid />
-      <TrustStrip />
       <MarketSnapshot />
+      <TrustStrip />
       {discoverySections.map((section) => (
         <DiscoverySection key={section.key} section={section} />
       ))}

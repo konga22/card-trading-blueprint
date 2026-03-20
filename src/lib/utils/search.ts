@@ -4,7 +4,9 @@ export function normalizeSearchTerm(input: string): string {
   return input.trim().toLowerCase().replace(/\s+/g, " ");
 }
 
-export function buildCardSearchLabel(card: Pick<HomeCardItem, "name" | "setName" | "cardNumber">): string {
+export function buildCardSearchLabel(
+  card: Pick<HomeCardItem, "name" | "setName" | "cardNumber">,
+): string {
   return [card.name, card.setName, card.cardNumber].join(" · ");
 }
 

@@ -24,8 +24,8 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(255, 111, 15, 0.08), transparent 28%),
-    linear-gradient(180deg, #fbfaf7 0%, var(--bg) 100%);
+    radial-gradient(circle at top left, rgba(255, 106, 0, 0.06), transparent 22%),
+    linear-gradient(180deg, #faf6ef 0%, var(--bg) 100%);
   color: var(--text-primary);
   font-family: inherit;
   text-rendering: optimizeLegibility;
@@ -68,25 +68,24 @@ img {
 }
 
 .app-shell__inner {
-  width: min(1280px, calc(100% - 24px));
+  width: min(1360px, calc(100% - 24px));
   margin: 0 auto;
-  padding: 20px 0 48px;
+  padding: 16px 0 56px;
 }
 
 .top-navigation {
   position: sticky;
-  top: 12px;
+  top: 10px;
   z-index: 30;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 20px;
-  margin-bottom: 18px;
-  padding: 14px 18px;
-  border: 1px solid rgba(203, 197, 183, 0.75);
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(14px);
+  margin-bottom: 22px;
+  padding: 14px 16px;
+  border: 1px solid rgba(201, 193, 179, 0.9);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.95);
   box-shadow: var(--shadow-card);
 }
 
@@ -97,21 +96,7 @@ img {
 .top-navigation__brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   min-width: 0;
-}
-
-.top-navigation__brand-mark {
-  display: inline-grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 16px;
-  background: var(--brand);
-  color: var(--text-inverse);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
 }
 
 .top-navigation__brand-copy {
@@ -121,17 +106,18 @@ img {
 }
 
 .top-navigation__brand-name {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.25;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   word-break: keep-all;
 }
 
 .top-navigation__tagline {
   margin-top: 4px;
   color: var(--text-tertiary);
-  font-size: 12px;
-  line-height: 1.4;
+  font-size: 11px;
+  line-height: 1.5;
   word-break: keep-all;
 }
 
@@ -140,16 +126,16 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   justify-self: center;
-  gap: 20px;
+  gap: 18px;
 }
 
 .top-navigation__nav-link {
   display: inline-flex;
   align-items: center;
-  min-height: 40px;
+  min-height: 38px;
   color: var(--text-secondary);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 700;
   transition: color 160ms ease;
 }
 
@@ -162,16 +148,16 @@ img {
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 8px;
 }
 
 .top-navigation__utility-link {
   display: inline-flex;
   align-items: center;
-  min-height: 40px;
+  min-height: 38px;
   color: var(--text-secondary);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 700;
   transition: color 160ms ease;
 }
 
@@ -184,9 +170,9 @@ img {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-height: 48px;
+  min-height: 46px;
   padding: 0 18px;
-  border-radius: var(--radius-md);
+  border-radius: 12px;
   border: 1px solid transparent;
   font-size: 14px;
   font-weight: 700;
@@ -235,7 +221,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  min-height: 28px;
+  min-height: 26px;
   padding: 0 10px;
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
@@ -300,7 +286,7 @@ img {
 
 .card-panel {
   border: 1px solid rgba(228, 225, 216, 0.92);
-  border-radius: var(--radius-lg);
+  border-radius: 18px;
   background: rgba(255, 255, 255, 0.96);
   box-shadow: var(--shadow-card);
 }
@@ -365,17 +351,17 @@ img {
 }
 
 .marketing-main {
-  padding-top: 6px;
+  padding-top: 2px;
 }
 
 .marketing-icon-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 12px;
   background: var(--surface);
   color: var(--text-secondary);
   transition:
@@ -391,7 +377,7 @@ img {
 }
 
 .marketing-footer {
-  margin-top: 28px;
+  margin-top: 34px;
   padding: 20px 4px 8px;
   color: var(--text-secondary);
 }
@@ -399,8 +385,9 @@ img {
 .marketing-footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 14px;
   font-size: 13px;
+  font-weight: 700;
 }
 
 .marketing-footer-note {
