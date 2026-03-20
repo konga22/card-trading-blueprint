@@ -27,8 +27,8 @@ export const CATALOG_GAME_FILTERS: readonly CatalogFilterOption<CatalogGameKey>[
     label: CATALOG_GAME_LABELS[key],
     description:
       key === "all"
-        ? "모든 카드 게임을 한 화면에서 비교합니다."
-        : `${CATALOG_GAME_LABELS[key]} 카드만 따로 살펴봅니다.`,
+        ? "모든 카드 게임을 한 화면에서 넓게 비교합니다."
+        : `${CATALOG_GAME_LABELS[key]} 카드만 따로 좁혀서 살펴봅니다.`,
   }));
 
 export const CATALOG_PURPOSE_FILTERS: readonly CatalogFilterOption<CatalogPurposeKey>[] =
@@ -37,7 +37,7 @@ export const CATALOG_PURPOSE_FILTERS: readonly CatalogFilterOption<CatalogPurpos
     label: CATALOG_PURPOSE_LABELS[key],
     description:
       key === "beginner"
-        ? "처음 시작하는 사용자를 위한 추천 카드 흐름입니다."
+        ? "처음 시작하는 사용자를 위한 카드 묶음과 탐색 흐름입니다."
         : `${CATALOG_PURPOSE_LABELS[key]} 목적에 맞는 카드를 모아봅니다.`,
   }));
 
@@ -45,19 +45,19 @@ export const CATALOG_FORMAT_FILTERS: readonly CatalogFilterOption<CatalogFormatK
   CATALOG_FORMAT_KEYS.map((key) => ({
     key,
     label: CATALOG_FORMAT_LABELS[key],
-    description: `${CATALOG_FORMAT_LABELS[key]} 형식으로 결과를 좁힙니다.`,
+    description: `${CATALOG_FORMAT_LABELS[key]} 기준으로 결과를 나눕니다.`,
   }));
 
 export const CATALOG_DETAIL_FILTERS = [
-  { key: "set", label: "세트", description: "출시 세트 기준으로 결과를 구분합니다." },
-  { key: "cardNumber", label: "카드 번호", description: "정확한 카드 번호로 대상을 찾습니다." },
-  { key: "language", label: "언어", description: "한국어, 영어, 일본어 등 언어별로 나눕니다." },
-  { key: "rarity", label: "희귀도", description: "희귀도 기준으로 카드를 다시 정렬합니다." },
-  { key: "edition", label: "에디션", description: "초판과 재판, 프로모 판본을 구분합니다." },
-  { key: "holoType", label: "홀로 타입", description: "광택과 표면 처리 방식으로 필터링합니다." },
-  { key: "condition", label: "상태", description: "미개봉급, 상태 좋음, 보통 등 상태를 고릅니다." },
-  { key: "gradingCompany", label: "그레이드 회사", description: "PSA, BGS 같은 감정 회사를 선택합니다." },
-  { key: "gradeScore", label: "그레이드 점수", description: "감정 점수 기준으로 카드를 비교합니다." },
+  { key: "set", label: "세트", description: "확장팩과 세트 기준으로 결과를 구분합니다." },
+  { key: "cardNumber", label: "카드번호", description: "정확한 카드번호로 바로 좁혀 찾습니다." },
+  { key: "language", label: "언어", description: "한국어, 영어, 일본어 기준으로 걸러 봅니다." },
+  { key: "rarity", label: "레어도", description: "희소도와 등급 기준으로 다시 비교합니다." },
+  { key: "edition", label: "에디션", description: "초판, 재판, 프로모 여부를 분리합니다." },
+  { key: "holoType", label: "홀로 타입", description: "표면 처리와 홀로 타입으로 세분화합니다." },
+  { key: "condition", label: "상태", description: "민트급, 사용감 있음, 그레이딩처럼 상태를 나눕니다." },
+  { key: "gradingCompany", label: "감정사", description: "PSA, BGS 같은 감정사 기준으로 필터링합니다." },
+  { key: "gradeScore", label: "등급 점수", description: "그레이딩 점수 범위로 결과를 좁힙니다." },
 ] as const;
 
 export const CATALOG_SORT_OPTIONS: readonly CatalogFilterOption<CatalogSortKey>[] =
@@ -66,7 +66,7 @@ export const CATALOG_SORT_OPTIONS: readonly CatalogFilterOption<CatalogSortKey>[
     label: CATALOG_SORT_LABELS[key],
     description:
       key === "recent_trade"
-        ? "최근 체결이 활발한 카드부터 보여줍니다."
+        ? "최근 거래 흐름이 빠른 카드부터 확인합니다."
         : `${CATALOG_SORT_LABELS[key]} 기준으로 결과를 정렬합니다.`,
   }));
 

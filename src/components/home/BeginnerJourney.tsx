@@ -6,9 +6,9 @@ import { HomeCard, HomeSection } from "./home-ui";
 export function BeginnerJourney() {
   return (
     <HomeSection
-      eyebrow="입문 가이드"
+      eyebrow="Beginner Journey"
       title="처음 거래하는 사람을 위한 3단계"
-      description="탐색, 시세 확인, 신뢰 체크를 순서대로 따라가면 초반 혼란을 크게 줄일 수 있습니다."
+      description="게임 파악, 시세 비교, 신뢰 확인 순서로 따라가면 초반 판단이 쉬워집니다."
     >
       <div className={styles.journeySteps}>
         {beginnerSteps.map((step, index) => (

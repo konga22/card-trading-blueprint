@@ -40,31 +40,31 @@ export type CatalogSortKey = (typeof CATALOG_SORT_KEYS)[number];
 
 export const CATALOG_GAME_LABELS: Record<CatalogGameKey, string> = {
   all: "전체",
-  pokemon: "Pokemon",
-  yugioh: "Yu-Gi-Oh!",
-  onepiece: "One Piece",
+  pokemon: "포켓몬",
+  yugioh: "유희왕",
+  onepiece: "원피스",
   other: "기타",
 };
 
 export const CATALOG_PURPOSE_LABELS: Record<CatalogPurposeKey, string> = {
   beginner: "입문",
-  collection: "컬렉션",
+  collection: "수집",
   play: "플레이",
-  rare: "희귀 카드",
+  rare: "희소 카드",
 };
 
 export const CATALOG_FORMAT_LABELS: Record<CatalogFormatKey, string> = {
   single: "싱글 카드",
-  graded: "그레이드 카드",
+  graded: "그레이딩 카드",
   set: "세트",
   box: "박스",
 };
 
 export const CATALOG_CONDITION_LABELS: Record<CatalogConditionKey, string> = {
-  mint: "미개봉급",
-  near_mint: "상태 좋음",
-  good: "보통",
-  graded: "그레이드",
+  mint: "민트급",
+  near_mint: "니어 민트",
+  good: "사용감 있음",
+  graded: "그레이딩",
 };
 
 export const CATALOG_LANGUAGE_LABELS: Record<CatalogLanguageKey, string> = {

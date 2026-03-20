@@ -17,19 +17,19 @@ export const SEARCH_SHORTCUTS: readonly SearchShortcut[] = [
     key: "popular",
     label: "인기 검색",
     query: "피카츄",
-    description: "가장 자주 찾는 카드부터 빠르게 살펴봅니다.",
+    description: "홈에서 가장 자주 찾는 카드부터 빠르게 살펴봅니다.",
   },
   {
     key: "recent",
     label: "최근 거래",
     query: "리자몽 ex",
-    description: "최근 시세 흐름이 빠른 카드를 다시 확인합니다.",
+    description: "최근 거래가 활발한 카드 흐름을 다시 확인합니다.",
   },
   {
     key: "photo",
-    label: "사진 검색 준비",
+    label: "사진 검색 준비중",
     query: "photo-search",
-    description: "이미지 기반 검색이 들어올 자리를 안내합니다.",
+    description: "이미지 기반 검색이 들어올 자리를 먼저 안내합니다.",
   },
 ];
 
@@ -73,7 +73,7 @@ export function createSearchHint(query: string): string {
   const normalizedQuery = normalizeSearchTerm(query);
 
   if (!normalizedQuery) {
-    return "카드명, 카드 번호, 세트명을 입력해 검색해 보세요.";
+    return "카드명, 카드번호, 세트명으로 검색해 보세요.";
   }
 
   return `"${query}" 기준으로 카드와 거래 흐름을 정리했습니다.`;

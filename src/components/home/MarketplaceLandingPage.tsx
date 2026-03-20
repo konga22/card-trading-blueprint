@@ -13,18 +13,14 @@ import { TrustStrip } from "./TrustStrip";
 export function MarketplaceLandingPage() {
   return (
     <main className={styles.main}>
-      <div className={styles.heroGrid}>
-        <HeroSection />
-        <div className={styles.asideStack}>
-          <HomeSearchBar />
-        </div>
-      </div>
+      <HomeSearchBar />
+      <HeroSection />
       <QuickActionsGrid />
       <TrustStrip />
-      {discoverySections.slice(0, 2).map((section) => (
+      <MarketSnapshot />
+      {discoverySections.map((section) => (
         <DiscoverySection key={section.key} section={section} />
       ))}
-      <MarketSnapshot />
       <BeginnerJourney />
       <DeepSearchPreview />
     </main>

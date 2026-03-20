@@ -1,34 +1,47 @@
 :root {
-  --bg: #f3f6fb;
+  --bg: #f5f4f1;
   --surface: #ffffff;
-  --surface-subtle: #f7f9fc;
-  --border: #dbe4ef;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-tertiary: #64748b;
-  --brand: #2563eb;
-  --brand-strong: #1d4ed8;
-  --positive: #059669;
-  --warning: #ea580c;
+  --surface-subtle: #f0eee8;
+  --surface-muted: #ebe7dd;
+  --border: #e4e1d8;
+  --border-strong: #cbc5b7;
 
-  --t1-size: 30px;
-  --t1-line: 40px;
-  --t2-size: 26px;
-  --t2-line: 35px;
+  --text-primary: #111111;
+  --text-secondary: #4b5563;
+  --text-tertiary: #7a7f87;
+  --text-inverse: #ffffff;
+
+  --brand: #111111;
+  --brand-strong: #262626;
+  --accent-warm: #ff6f0f;
+  --accent-warm-soft: #fff1e7;
+  --accent-trust: #2563eb;
+  --accent-trust-soft: #eaf2ff;
+  --positive: #0f9d58;
+  --positive-soft: #eaf8f0;
+  --warning: #f59e0b;
+  --warning-soft: #fff7e6;
+  --danger: #d64545;
+  --danger-soft: #fdecec;
+
+  --t1-size: 40px;
+  --t1-line: 46px;
+  --t2-size: 28px;
+  --t2-line: 34px;
   --t3-size: 22px;
-  --t3-line: 31px;
-  --t4-size: 20px;
-  --t4-line: 29px;
-  --t5-size: 17px;
-  --t5-line: 25.5px;
-  --t6-size: 15px;
-  --t6-line: 22.5px;
-  --t7-size: 13px;
-  --t7-line: 19.5px;
+  --t3-line: 30px;
+  --t4-size: 18px;
+  --t4-line: 26px;
+  --t5-size: 16px;
+  --t5-line: 24px;
+  --t6-size: 14px;
+  --t6-line: 20px;
+  --t7-size: 12px;
+  --t7-line: 18px;
   --st10-size: 16px;
   --st10-line: 24px;
   --st11-size: 14px;
-  --st11-line: 21px;
+  --st11-line: 20px;
   --st12-size: 12px;
   --st12-line: 18px;
 
@@ -40,11 +53,16 @@
   --space-6: 24px;
   --space-7: 32px;
   --space-8: 40px;
+  --space-9: 56px;
+  --space-10: 72px;
 
-  --radius-sm: 12px;
-  --radius-md: 16px;
-  --radius-lg: 20px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
 
-  --shadow-card: 0 12px 28px rgba(15, 23, 42, 0.06);
-  --shadow-soft: 0 4px 12px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 6px 18px rgba(17, 17, 17, 0.06);
+  --shadow-soft: 0 1px 2px rgba(17, 17, 17, 0.04);
+  --shadow-hover: 0 10px 28px rgba(17, 17, 17, 0.1);
 }

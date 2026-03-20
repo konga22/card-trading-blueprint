@@ -6,9 +6,9 @@ import { HomeButton, HomeCard, HomeSection } from "./home-ui";
 export function DeepSearchPreview() {
   return (
     <HomeSection
-      eyebrow="고급 검색"
-      title="넓은 검색으로 부족할 때 쓰는 정밀 도구"
-      description="홈에서는 방향만 잡고, 세부 조건은 별도 검색 화면에서 차분하게 다룹니다."
+      eyebrow="Advanced Search"
+      title="깊은 검색이 필요할 때를 위한 미리보기"
+      description="홈에서는 방향만 잡고, 상세 조건은 별도 검색 화면에서 차분하게 좁혀갑니다."
     >
       <HomeCard className={styles.deepPanel}>
         <div className={styles.deepList}>
@@ -22,10 +22,11 @@ export function DeepSearchPreview() {
         </div>
         <div className={styles.deepFooter}>
           <p className={styles.mutedText}>
-            카드번호, 세트, 언어, 상태를 함께 쓰기 시작하면 전용 검색 화면이 더 효율적입니다.
+            카드번호, 세트, 언어, 상태를 함께 고르기 시작하면 전용 검색 화면이 더
+            효율적입니다.
           </p>
           <HomeButton variant="primary" href="/search/advanced">
-            고급 검색 열기
+            상세 검색 열기
           </HomeButton>
         </div>
       </HomeCard>

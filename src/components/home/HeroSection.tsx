@@ -1,34 +1,97 @@
+import Image from "next/image";
+
 import styles from "./home.module.css";
 
-import { HomeButton } from "./home-ui";
+import { featuredListings, formatWon, heroSignals, heroSpotlight } from "./home-data";
+import { HomeButton, HomeStatusBadge } from "./home-ui";
 
 export function HeroSection() {
   return (
     <section className={styles.heroPanel}>
-      <div className={styles.heroBadge}>카드 거래 블루프린트</div>
-      <h1 className={styles.heroTitle}>검색부터 시작하고, 시세를 확인한 뒤, 신뢰 신호를 보고 행동합니다.</h1>
-      <p className={styles.heroDescription}>
-        홈은 전체 기능을 억지로 다 담지 않고, 탐색과 시세, 판매 준비를 분명한 단계로 나눠서 안내합니다.
-      </p>
-      <div className={styles.heroCtas}>
-        <HomeButton variant="primary" href="/discover">
-          탐색 시작
-        </HomeButton>
-        <HomeButton variant="secondary" href="/beginner">
-          입문 가이드 보기
-        </HomeButton>
-      </div>
-      <div className={styles.heroMeta}>
-        카드 거래를 처음 보는 사람도 다음에 어디로 가야 하는지가 보이도록 흐름을 설계했습니다.
-      </div>
-      <div className={styles.miniDeck} aria-hidden="true">
-        <div className={styles.miniCard}>
-          <p className={styles.miniCardTitle}>탐색 분리</p>
-          <p className={styles.miniCardText}>게임별 탐색과 입문 추천은 별도 페이지에서 더 선명하게 보여줍니다.</p>
+      <div className={styles.heroSplit}>
+        <div className={styles.heroCopy}>
+          <div className={styles.heroBadge}>검색이 먼저 보이는 카드 거래 홈</div>
+          <h1 className={styles.heroTitle}>
+            카드 검색, 실거래 시세, 안전거래 기준을 한 흐름으로 정리했습니다.
+          </h1>
+          <p className={styles.heroDescription}>
+            번개장터처럼 바로 찾고, KREAM처럼 가격과 정책을 읽고, 당근처럼 부담 없이
+            시작하는 카드 거래 인터페이스를 목표로 잡았습니다.
+          </p>
+          <div className={styles.heroCtas}>
+            <HomeButton variant="primary" href="/search">
+              카드 검색 시작
+            </HomeButton>
+            <HomeButton variant="secondary" href="/sell/start">
+              판매 준비 보기
+            </HomeButton>
+          </div>
+          <div className={styles.heroHighlights}>
+            <div className={styles.heroHighlight}>
+              <strong>홈의 첫 행동은 검색</strong>
+              <span>카드명, 카드번호, 세트명으로 바로 찾고, 필요하면 상세 검색으로 이동합니다.</span>
+            </div>
+            <div className={styles.heroHighlight}>
+              <strong>시세는 최근 거래 기준</strong>
+              <span>호가보다 최근 체결 흐름과 거래 건수를 먼저 보여줘 판단을 빠르게 돕습니다.</span>
+            </div>
+            <div className={styles.heroHighlight}>
+              <strong>포켓몬 자산은 공식 출처만</strong>
+              <span>포켓몬 비주얼은 공식 사이트 기준으로만 운영하고, 비공식 이미지 사용을 막습니다.</span>
+            </div>
+          </div>
         </div>
-        <div className={styles.miniCard}>
-          <p className={styles.miniCardTitle}>다음 행동 강조</p>
-          <p className={styles.miniCardText}>시세 확인과 판매 준비는 각각 전용 흐름으로 이어져 혼란을 줄입니다.</p>
+
+        <div className={styles.heroVisual}>
+          <div className={styles.heroSpotlight}>
+            <div className={styles.heroSpotlightArt}>
+              <Image
+                className={styles.cardArtImage}
+                src={heroSpotlight.imageUrl}
+                alt=""
+                width={320}
+                height={420}
+                priority
+              />
+            </div>
+            <div className={styles.heroSpotlightBody}>
+              <div className={styles.heroSpotlightTop}>
+                <HomeStatusBadge tone="brand">공식 자산 기준 시안</HomeStatusBadge>
+                <HomeStatusBadge tone="positive">검수 가능</HomeStatusBadge>
+              </div>
+              <div>
+                <h2 className={styles.heroSpotlightTitle}>{heroSpotlight.name}</h2>
+                <p className={styles.heroSpotlightMeta}>
+                  {heroSpotlight.setName} · {heroSpotlight.cardNumber}
+                </p>
+              </div>
+              <div className={styles.heroSpotlightPrice}>{formatWon(heroSpotlight.currentPrice)}</div>
+              <p className={styles.heroSpotlightNote}>
+                최근 거래 {heroSpotlight.transactionCount}건 · 안전결제 노출 기준 포함
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.heroSignalGrid}>
+            {heroSignals.map((signal) => (
+              <div key={signal.label} className={styles.heroSignalCard}>
+                <HomeStatusBadge tone={signal.tone}>{signal.label}</HomeStatusBadge>
+                <div className={styles.heroSignalValue}>{signal.value}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.heroFeatureList}>
+            {featuredListings.slice(0, 2).map((item) => (
+              <a key={item.id} className={styles.heroFeatureRow} href={item.href}>
+                <div>
+                  <div className={styles.heroFeatureTitle}>{item.title}</div>
+                  <div className={styles.heroFeatureMeta}>{item.hint}</div>
+                </div>
+                <div className={styles.heroFeaturePrice}>{formatWon(item.price)}</div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

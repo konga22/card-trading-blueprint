@@ -1,24 +1,25 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import { Noto_Sans_KR, Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 
 import "@/app/globals.css";
 
-const headingFont = IBM_Plex_Sans({
+const uiFont = Noto_Sans_KR({
   subsets: ["latin"],
-  variable: "--font-heading",
-  weight: ["600", "700"],
+  variable: "--font-ui",
+  weight: ["400", "500", "700"],
 });
 
-const bodyFont = IBM_Plex_Sans({
+const dataFont = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "500", "600"],
+  variable: "--font-data",
+  weight: ["500", "700"],
 });
 
 export const metadata: Metadata = {
   title: "Card Trading Blueprint",
-  description: "카드 검색, 시세 확인, 판매 준비 흐름을 분리해 정리한 카드 거래 블루프린트.",
+  description:
+    "검색, 시세 확인, 판매 준비를 분리해 보여주는 카드 거래 블루프린트",
 };
 
 type RootLayoutProps = Readonly<{
@@ -28,7 +29,7 @@ type RootLayoutProps = Readonly<{
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ko">
-      <body className={`${headingFont.variable} ${bodyFont.variable}`}>{children}</body>
+      <body className={`${uiFont.variable} ${dataFont.variable}`}>{children}</body>
     </html>
   );
 }

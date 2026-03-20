@@ -7,9 +7,9 @@ import { HomeCard, HomeSection } from "./home-ui";
 export function MarketSnapshot() {
   return (
     <HomeSection
-      eyebrow="시장 스냅샷"
-      title="최근 거래 반응이 빠른 카드"
-      description="최근 체결가와 거래 건수를 같이 보면서 과열 여부를 빠르게 읽습니다."
+      eyebrow="Market Snapshot"
+      title="최근 거래 흐름을 빠르게 읽는 카드"
+      description="차트보다 거래 가격, 거래량, 변동폭을 먼저 보여주는 마켓 스냅샷입니다."
       action={
         <Link className={styles.sectionLink} href="/market">
           시세 페이지 보기

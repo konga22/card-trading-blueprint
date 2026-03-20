@@ -13,8 +13,8 @@ const toneClassMap = {
 export function TrustStrip() {
   return (
     <HomeSection
-      title="거래 전에 꼭 확인할 신뢰 신호"
-      description="가격만 보지 않도록 안전결제, 검수, 최근 거래, 판매자 평점을 같이 배치합니다."
+      title="가격 옆에서 바로 읽히는 신뢰 정보"
+      description="안전결제, 검수, 판매자 평점, 최근 거래 흐름을 첫 화면에서 먼저 보여줍니다."
     >
       <div className={styles.trustList}>
         {trustItems.map((item) => (

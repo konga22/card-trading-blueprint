@@ -24,6 +24,6 @@ describe("catalog taxonomy", () => {
 
   it("includes search-friendly sort labels", () => {
     expect(CATALOG_SORT_OPTIONS.map((option) => option.key)).toContain("recent_trade");
-    expect(getCatalogGameLabel("pokemon")).toBe("Pokemon");
+    expect(getCatalogGameLabel("pokemon")).toBe("포켓몬");
   });
 });

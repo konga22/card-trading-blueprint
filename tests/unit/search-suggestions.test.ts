@@ -20,6 +20,6 @@ describe("search helpers", () => {
 
   it("keeps the chip metadata compact", () => {
     expect(SEARCH_FILTER_CHIPS[0].tone).toBe("brand");
-    expect(createSearchHint("")).toBe("카드명, 카드 번호, 세트명을 입력해 검색해 보세요.");
+    expect(createSearchHint("")).toBe("카드명, 카드번호, 세트명으로 검색해 보세요.");
   });
 });

@@ -12,12 +12,12 @@ export function BeginnerPage() {
 
   return (
     <PageScaffold
-      eyebrow="입문 전용"
-      title="처음 거래할 때 필요한 내용만 따로 모아 시작 부담을 줄입니다."
-      description="무엇부터 봐야 하는지, 가격과 상태를 어떤 순서로 읽어야 하는지, 신뢰 신호는 무엇인지 한 화면에서 정리합니다."
+      eyebrow="Beginner"
+      title="처음 거래하는 사용자가 헷갈리는 지점을 먼저 정리하는 입문 페이지"
+      description="무엇부터 봐야 하는지, 가격과 상태를 어떤 순서로 읽어야 하는지, 신뢰 신호는 어디서 확인하는지 한 번에 정리했습니다."
       actions={
         <>
-          <SecondaryButton href="/discover">게임별 카드 보기</SecondaryButton>
+          <SecondaryButton href="/discover">탐색 허브 보기</SecondaryButton>
           <PrimaryButton href="/market">시세 먼저 보기</PrimaryButton>
         </>
       }
@@ -31,11 +31,11 @@ export function BeginnerPage() {
             </div>
             <div className={styles.metricCard}>
               <div className={styles.metricLabel}>2단계</div>
-              <div className={styles.metricValue}>시세</div>
+              <div className={styles.metricValue}>시세 확인</div>
             </div>
             <div className={styles.metricCard}>
               <div className={styles.metricLabel}>3단계</div>
-              <div className={styles.metricValue}>신뢰 확인</div>
+              <div className={styles.metricValue}>신뢰 체크</div>
             </div>
           </div>
         </div>

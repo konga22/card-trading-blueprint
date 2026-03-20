@@ -28,7 +28,6 @@ export function PageScaffold({
           <p className={styles.routeDescription}>{description}</p>
           {actions ? <div className={styles.routeActions}>{actions}</div> : null}
         </div>
-
         {aside ? <aside className={styles.routeAside}>{aside}</aside> : null}
       </section>
 
@@ -36,4 +35,3 @@ export function PageScaffold({
     </main>
   );
 }
-
